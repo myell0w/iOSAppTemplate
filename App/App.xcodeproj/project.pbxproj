@@ -37,10 +37,10 @@
 		39581C6D142299BE00146B4F /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39581C71142299BE00146B4F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		39581C73142299BE00146B4F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		39581C77142299BE00146B4F /* App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "App-Info.plist"; sourceTree = "<group>"; };
+		39581C77142299BE00146B4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39581C79142299BE00146B4F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		39581C7B142299BE00146B4F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		39581C7D142299BE00146B4F /* App-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "App-Prefix.pch"; sourceTree = "<group>"; };
+		39581C7D142299BE00146B4F /* Prefix.pch */ = {isa = PBXFileReference; path = Prefix.pch; sourceTree = "<group>"; };
 		39581C7E142299BE00146B4F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		39581C7F142299BE00146B4F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,10 +107,10 @@
 		39581C76142299BE00146B4F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				39581C77142299BE00146B4F /* App-Info.plist */,
+				39581C77142299BE00146B4F /* Info.plist */,
 				39581C78142299BE00146B4F /* InfoPlist.strings */,
 				39581C7B142299BE00146B4F /* main.m */,
-				39581C7D142299BE00146B4F /* App-Prefix.pch */,
+				39581C7D142299BE00146B4F /* Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -274,8 +274,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "App/App-Prefix.pch";
-				INFOPLIST_FILE = "App/App-Info.plist";
+				GCC_PREFIX_HEADER = App/Prefix.pch;
+				INFOPLIST_FILE = App/Info.plist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -285,8 +285,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "App/App-Prefix.pch";
-				INFOPLIST_FILE = "App/App-Info.plist";
+				GCC_PREFIX_HEADER = App/Prefix.pch;
+				INFOPLIST_FILE = App/Info.plist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
