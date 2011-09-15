@@ -1,5 +1,6 @@
 #import "FKBaseViewController.h"
 
+
 @implementation FKBaseViewController
 
 ////////////////////////////////////////////////////////////////////////
@@ -15,5 +16,9 @@
     return self;
 }
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+}
 
 @end
