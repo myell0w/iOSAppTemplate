@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		394EF13E14229AA80005C045 /* libiOSKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 394EF13914229A9B0005C045 /* libiOSKit.a */; };
+		394EF14514229BB00005C045 /* FKBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 394EF14314229BB00005C045 /* FKBaseViewController.m */; };
 		39581C72142299BE00146B4F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39581C71142299BE00146B4F /* UIKit.framework */; };
 		39581C74142299BE00146B4F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39581C73142299BE00146B4F /* Foundation.framework */; };
 		39581C7A142299BE00146B4F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 39581C78142299BE00146B4F /* InfoPlist.strings */; };
@@ -34,13 +35,16 @@
 
 /* Begin PBXFileReference section */
 		394EF13114229A9A0005C045 /* iOSKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = iOSKit.xcodeproj; path = ../iOSKit/iOSKit.xcodeproj; sourceTree = "<group>"; };
+		394EF14214229BB00005C045 /* FKBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKBaseViewController.h; sourceTree = "<group>"; };
+		394EF14314229BB00005C045 /* FKBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKBaseViewController.m; sourceTree = "<group>"; };
+		394EF14414229BB00005C045 /* FKIncludes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKIncludes.h; path = Sources/FKIncludes.h; sourceTree = "<group>"; };
 		39581C6D142299BE00146B4F /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39581C71142299BE00146B4F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		39581C73142299BE00146B4F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		39581C77142299BE00146B4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39581C79142299BE00146B4F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		39581C7B142299BE00146B4F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		39581C7D142299BE00146B4F /* Prefix.pch */ = {isa = PBXFileReference; path = Prefix.pch; sourceTree = "<group>"; };
+		39581C7D142299BE00146B4F /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		39581C7E142299BE00146B4F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		39581C7F142299BE00146B4F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,9 +71,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		394EF14114229BB00005C045 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				394EF14214229BB00005C045 /* FKBaseViewController.h */,
+				394EF14314229BB00005C045 /* FKBaseViewController.m */,
+			);
+			name = "View Controller";
+			path = "App/Sources/View Controller";
+			sourceTree = "<group>";
+		};
 		39581C62142299BE00146B4F = {
 			isa = PBXGroup;
 			children = (
+				394EF14114229BB00005C045 /* View Controller */,
 				39581C75142299BE00146B4F /* App */,
 				39581C70142299BE00146B4F /* Frameworks */,
 				39581C6E142299BE00146B4F /* Products */,
@@ -99,6 +114,7 @@
 			children = (
 				39581C7E142299BE00146B4F /* AppDelegate.h */,
 				39581C7F142299BE00146B4F /* AppDelegate.m */,
+				394EF14414229BB00005C045 /* FKIncludes.h */,
 				39581C76142299BE00146B4F /* Supporting Files */,
 			);
 			path = App;
@@ -196,6 +212,7 @@
 			files = (
 				39581C7C142299BE00146B4F /* main.m in Sources */,
 				39581C80142299BE00146B4F /* AppDelegate.m in Sources */,
+				394EF14514229BB00005C045 /* FKBaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

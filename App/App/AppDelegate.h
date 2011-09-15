@@ -1,10 +1,4 @@
-//
-//  AppDelegate.h
-//  App
-//
-//  Created by Tretter Matthias on 15.09.11.
-//  Copyright (c) 2011 NOUS Wissensmanagement GmbH. All rights reserved.
-//
+// Part of iOSAppTemplate http://foundationk.it
 
 #import <UIKit/UIKit.h>
 
