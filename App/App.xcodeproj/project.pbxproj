@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		394EF13E14229AA80005C045 /* libiOSKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 394EF13914229A9B0005C045 /* libiOSKit.a */; };
 		394EF14514229BB00005C045 /* FKBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 394EF14314229BB00005C045 /* FKBaseViewController.m */; };
+		394EF1991422A2670005C045 /* FKBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 394EF1981422A2670005C045 /* FKBaseTableViewController.m */; };
 		39581C72142299BE00146B4F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39581C71142299BE00146B4F /* UIKit.framework */; };
 		39581C74142299BE00146B4F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39581C73142299BE00146B4F /* Foundation.framework */; };
 		39581C7A142299BE00146B4F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 39581C78142299BE00146B4F /* InfoPlist.strings */; };
@@ -38,6 +39,9 @@
 		394EF14214229BB00005C045 /* FKBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKBaseViewController.h; sourceTree = "<group>"; };
 		394EF14314229BB00005C045 /* FKBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKBaseViewController.m; sourceTree = "<group>"; };
 		394EF14414229BB00005C045 /* FKIncludes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKIncludes.h; path = Sources/FKIncludes.h; sourceTree = "<group>"; };
+		394EF1971422A2670005C045 /* FKBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKBaseTableViewController.h; sourceTree = "<group>"; };
+		394EF1981422A2670005C045 /* FKBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKBaseTableViewController.m; sourceTree = "<group>"; };
+		394EF19B1422A2A90005C045 /* FKDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKDefines.h; path = Sources/FKDefines.h; sourceTree = "<group>"; };
 		39581C6D142299BE00146B4F /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39581C71142299BE00146B4F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		39581C73142299BE00146B4F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -74,11 +78,21 @@
 		394EF14114229BB00005C045 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				394EF14214229BB00005C045 /* FKBaseViewController.h */,
-				394EF14314229BB00005C045 /* FKBaseViewController.m */,
+				394EF19A1422A26C0005C045 /* Base */,
 			);
 			name = "View Controller";
 			path = "App/Sources/View Controller";
+			sourceTree = "<group>";
+		};
+		394EF19A1422A26C0005C045 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				394EF14214229BB00005C045 /* FKBaseViewController.h */,
+				394EF14314229BB00005C045 /* FKBaseViewController.m */,
+				394EF1971422A2670005C045 /* FKBaseTableViewController.h */,
+				394EF1981422A2670005C045 /* FKBaseTableViewController.m */,
+			);
+			name = Base;
 			sourceTree = "<group>";
 		};
 		39581C62142299BE00146B4F = {
@@ -102,9 +116,9 @@
 		39581C70142299BE00146B4F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				394EF13114229A9A0005C045 /* iOSKit.xcodeproj */,
-				39581C71142299BE00146B4F /* UIKit.framework */,
 				39581C73142299BE00146B4F /* Foundation.framework */,
+				39581C71142299BE00146B4F /* UIKit.framework */,
+				394EF13114229A9A0005C045 /* iOSKit.xcodeproj */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -115,6 +129,7 @@
 				39581C7E142299BE00146B4F /* AppDelegate.h */,
 				39581C7F142299BE00146B4F /* AppDelegate.m */,
 				394EF14414229BB00005C045 /* FKIncludes.h */,
+				394EF19B1422A2A90005C045 /* FKDefines.h */,
 				39581C76142299BE00146B4F /* Supporting Files */,
 			);
 			path = App;
@@ -213,6 +228,7 @@
 				39581C7C142299BE00146B4F /* main.m in Sources */,
 				39581C80142299BE00146B4F /* AppDelegate.m in Sources */,
 				394EF14514229BB00005C045 /* FKBaseViewController.m in Sources */,
+				394EF1991422A2670005C045 /* FKBaseTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

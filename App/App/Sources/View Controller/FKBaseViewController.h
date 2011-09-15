@@ -5,4 +5,6 @@
 
 @interface FKBaseViewController : UIViewController
 
++ (id)viewController;
+
 @end

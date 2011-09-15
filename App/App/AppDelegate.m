@@ -1,15 +1,24 @@
 #import "AppDelegate.h"
+#import "FKBaseViewController.h"
 
 @implementation AppDelegate
 
-@synthesize window = _window;
+@synthesize window = window_;
+@synthesize rootViewController = rootViewController_;
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // check for NSZombie (memory leak if enabled, but very useful!)
+    if(getenv("NSZombieEnabled") || getenv("NSAutoreleaseFreedObjectCheckEnabled")) {
+        NSLog(@"NSZombieEnabled / NSAutoreleaseFreedObjectCheckEnabled enabled! Disable for release.");
+    }
+    
+    self.rootViewController = [FKBaseViewController viewController];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = self.rootViewController;
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
