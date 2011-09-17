@@ -5,15 +5,6 @@
 
 ////////////////////////////////////////////////////////////////////////
 #pragma mark -
-#pragma mark Class Methods
-////////////////////////////////////////////////////////////////////////
-
-+ (id)viewController {
-    return [[[self class] alloc] initWithNibName:nil bundle:nil];
-}
-
-////////////////////////////////////////////////////////////////////////
-#pragma mark -
 #pragma mark UIViewController
 ////////////////////////////////////////////////////////////////////////
 
@@ -23,6 +14,22 @@
     }
     
     return self;
+}
+
+////////////////////////////////////////////////////////////////////////
+#pragma mark -
+#pragma mark Rotation
+////////////////////////////////////////////////////////////////////////
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
+    return FKRotateOnPad(toInterfaceOrientation);
+}
+
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    [super willAnimateRotationToInterfaceOrientation:toInterfaceOrientation duration:duration];
+    
+    // UIView+FKRotation
+    [self.view setSubviewFramesForInterfaceOrientation:toInterfaceOrientation];
 }
 
 @end

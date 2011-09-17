@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		394EF13E14229AA80005C045 /* libiOSKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 394EF13914229A9B0005C045 /* libiOSKit.a */; };
 		394EF14514229BB00005C045 /* FKBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 394EF14314229BB00005C045 /* FKBaseViewController.m */; };
 		394EF1991422A2670005C045 /* FKBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 394EF1981422A2670005C045 /* FKBaseTableViewController.m */; };
 		39581C72142299BE00146B4F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39581C71142299BE00146B4F /* UIKit.framework */; };
@@ -15,19 +14,22 @@
 		39581C7A142299BE00146B4F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 39581C78142299BE00146B4F /* InfoPlist.strings */; };
 		39581C7C142299BE00146B4F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 39581C7B142299BE00146B4F /* main.m */; };
 		39581C80142299BE00146B4F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 39581C7F142299BE00146B4F /* AppDelegate.m */; };
+		39DF5D191424AC5200090805 /* libiOSKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39DF5D131424AC3800090805 /* libiOSKit.a */; };
+		39DF5D391424AD9800090805 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39DF5D381424AD9800090805 /* CoreGraphics.framework */; };
+		39DF5D3B1424ADA100090805 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39DF5D3A1424ADA100090805 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		394EF13814229A9B0005C045 /* PBXContainerItemProxy */ = {
+		39DF5D121424AC3800090805 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 394EF13114229A9A0005C045 /* iOSKit.xcodeproj */;
+			containerPortal = 39DF5D071424AC3700090805 /* iOSKit.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 39F5165F13C8E3F3008A9732;
 			remoteInfo = iOSKit;
 		};
-		394EF13F14229AAE0005C045 /* PBXContainerItemProxy */ = {
+		39DF5D171424AC4B00090805 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 394EF13114229A9A0005C045 /* iOSKit.xcodeproj */;
+			containerPortal = 39DF5D071424AC3700090805 /* iOSKit.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 39F5165E13C8E3F3008A9732;
 			remoteInfo = iOSKit;
@@ -35,7 +37,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		394EF13114229A9A0005C045 /* iOSKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = iOSKit.xcodeproj; path = ../iOSKit/iOSKit.xcodeproj; sourceTree = "<group>"; };
 		394EF14214229BB00005C045 /* FKBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKBaseViewController.h; sourceTree = "<group>"; };
 		394EF14314229BB00005C045 /* FKBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKBaseViewController.m; sourceTree = "<group>"; };
 		394EF14414229BB00005C045 /* FKIncludes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKIncludes.h; path = Sources/FKIncludes.h; sourceTree = "<group>"; };
@@ -51,6 +52,9 @@
 		39581C7D142299BE00146B4F /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		39581C7E142299BE00146B4F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		39581C7F142299BE00146B4F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		39DF5D071424AC3700090805 /* iOSKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = iOSKit.xcodeproj; path = ../iOSKit/iOSKit.xcodeproj; sourceTree = "<group>"; };
+		39DF5D381424AD9800090805 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		39DF5D3A1424ADA100090805 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +62,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				394EF13E14229AA80005C045 /* libiOSKit.a in Frameworks */,
+				39DF5D3B1424ADA100090805 /* QuartzCore.framework in Frameworks */,
+				39DF5D391424AD9800090805 /* CoreGraphics.framework in Frameworks */,
+				39DF5D191424AC5200090805 /* libiOSKit.a in Frameworks */,
 				39581C72142299BE00146B4F /* UIKit.framework in Frameworks */,
 				39581C74142299BE00146B4F /* Foundation.framework in Frameworks */,
 			);
@@ -67,14 +73,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		394EF13214229A9A0005C045 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				394EF13914229A9B0005C045 /* libiOSKit.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		394EF14114229BB00005C045 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,9 +114,11 @@
 		39581C70142299BE00146B4F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				39DF5D071424AC3700090805 /* iOSKit.xcodeproj */,
+				39DF5D3A1424ADA100090805 /* QuartzCore.framework */,
+				39DF5D381424AD9800090805 /* CoreGraphics.framework */,
 				39581C73142299BE00146B4F /* Foundation.framework */,
 				39581C71142299BE00146B4F /* UIKit.framework */,
-				394EF13114229A9A0005C045 /* iOSKit.xcodeproj */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -146,6 +146,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		39DF5D081424AC3700090805 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				39DF5D131424AC3800090805 /* libiOSKit.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -160,7 +168,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				394EF14014229AAE0005C045 /* PBXTargetDependency */,
+				39DF5D181424AC4B00090805 /* PBXTargetDependency */,
 			);
 			name = App;
 			productName = App;
@@ -188,8 +196,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 394EF13214229A9A0005C045 /* Products */;
-					ProjectRef = 394EF13114229A9A0005C045 /* iOSKit.xcodeproj */;
+					ProductGroup = 39DF5D081424AC3700090805 /* Products */;
+					ProjectRef = 39DF5D071424AC3700090805 /* iOSKit.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -200,11 +208,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		394EF13914229A9B0005C045 /* libiOSKit.a */ = {
+		39DF5D131424AC3800090805 /* libiOSKit.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libiOSKit.a;
-			remoteRef = 394EF13814229A9B0005C045 /* PBXContainerItemProxy */;
+			remoteRef = 39DF5D121424AC3800090805 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -235,10 +243,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		394EF14014229AAE0005C045 /* PBXTargetDependency */ = {
+		39DF5D181424AC4B00090805 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = iOSKit;
-			targetProxy = 394EF13F14229AAE0005C045 /* PBXContainerItemProxy */;
+			targetProxy = 39DF5D171424AC4B00090805 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
