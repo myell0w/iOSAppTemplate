@@ -10,3 +10,9 @@
 [submodule "AFNetworking"]
 	path = AFNetworking
 	url = git://github.com/foundationkit/AFNetworking.git
+[submodule "PDKeychainBindingsController"]
+	path = PDKeychainBindingsController
+	url = git://github.com/foundationkit/PDKeychainBindingsController.git
+[submodule "DCIntrospect"]
+	path = DCIntrospect
+	url = git://github.com/foundationkit/DCIntrospect.git

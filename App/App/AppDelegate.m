@@ -1,10 +1,20 @@
 #import "AppDelegate.h"
 #import "FKBaseViewController.h"
+#import "DCIntrospect.h"
+
+@interface AppDelegate ()
+
+- (void)applicationPrepareForBackgroundOrTermination:(UIApplication *)application;
+
+- (void)postFinishLaunch;
+- (void)setup;
+
+@end
 
 @implementation AppDelegate
 
-@synthesize window = window_;
-@synthesize rootViewController = rootViewController_;
+$synthesize(window);
+$synthesize(rootViewController);
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // check for NSZombie (memory leak if enabled, but very useful!)
@@ -12,12 +22,19 @@
         NSLog(@"NSZombieEnabled / NSAutoreleaseFreedObjectCheckEnabled enabled! Disable for release.");
     }
     
-    self.rootViewController = [FKBaseViewController viewController];
+    [self setup];
     
+    // Setup Window
+    self.rootViewController = [FKBaseViewController viewController];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = self.rootViewController;
     [self.window makeKeyAndVisible];
+    
+    if (kFKPostFinishLaunchDelay > 0.) {
+        [self performSelector:@selector(postFinishLaunch) withObject:nil afterDelay:kFKPostFinishLaunchDelay];
+    }
     
     return YES;
 }
@@ -27,14 +44,6 @@
     /*
      Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
      Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-     */
-}
-
-- (void)applicationDidEnterBackground:(UIApplication *)application
-{
-    /*
-     Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
-     If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
      */
 }
 
@@ -52,13 +61,41 @@
      */
 }
 
-- (void)applicationWillTerminate:(UIApplication *)application
-{
-    /*
-     Called when the application is about to terminate.
-     Save data if appropriate.
-     See also applicationDidEnterBackground:.
-     */
+- (void)applicationDidEnterBackground:(UIApplication *)application {
+    [self applicationPrepareForBackgroundOrTermination:application];
+}
+
+- (void)applicationWillTerminate:(UIApplication *)application {
+    [self applicationPrepareForBackgroundOrTermination:application];
+}
+
+////////////////////////////////////////////////////////////////////////
+#pragma mark -
+#pragma mark Private
+////////////////////////////////////////////////////////////////////////
+
+- (void)applicationPrepareForBackgroundOrTermination:(UIApplication *)application {
+    // DDLogInfo(@"detected application termination.");
+    
+    // post notification to all listeners
+    [[NSNotificationCenter defaultCenter] postNotificationName:kFKApplicationWillSuspendNotification object:application];
+}
+
+- (void)postFinishLaunch {
+    // visual debugging!
+#ifdef kFKDCIntrospectEnabled
+    [[DCIntrospect sharedIntrospector] start];
+#endif
+    
+}
+
+- (void)setup {
+    // Setup UserDefaults
+    [[NSUserDefaults standardUserDefaults] registerDefaultsFromSettingsBundle];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    // Setup Logger
+    // TODO:
 }
 
 @end
