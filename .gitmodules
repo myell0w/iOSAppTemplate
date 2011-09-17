@@ -1,3 +1,12 @@
 [submodule "iOSKit"]
 	path = iOSKit
 	url = git@github.com:foundationkit/iOSKit.git
+[submodule "BlocksKit"]
+	path = BlocksKit
+	url = git://github.com/foundationkit/BlocksKit.git
+[submodule "MagicalRecord"]
+	path = MagicalRecord
+	url = git://github.com/foundationkit/MagicalRecord.git
+[submodule "AFNetworking"]
+	path = AFNetworking
+	url = git://github.com/foundationkit/AFNetworking.git

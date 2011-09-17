@@ -17,6 +17,10 @@
 		39DF5D191424AC5200090805 /* libiOSKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39DF5D131424AC3800090805 /* libiOSKit.a */; };
 		39DF5D391424AD9800090805 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39DF5D381424AD9800090805 /* CoreGraphics.framework */; };
 		39DF5D3B1424ADA100090805 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39DF5D3A1424ADA100090805 /* QuartzCore.framework */; };
+		39DF5D6A1424B1D200090805 /* libBlocksKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39DF5D5B1424B1AA00090805 /* libBlocksKit.a */; };
+		39DF5D6C1424B20100090805 /* AFNetworking in Resources */ = {isa = PBXBuildFile; fileRef = 39DF5D6B1424B20100090805 /* AFNetworking */; };
+		39DF5D6E1424B22500090805 /* Source in Resources */ = {isa = PBXBuildFile; fileRef = 39DF5D6D1424B22500090805 /* Source */; };
+		39DF5D701424B24900090805 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39DF5D6F1424B24900090805 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +37,41 @@
 			proxyType = 1;
 			remoteGlobalIDString = 39F5165E13C8E3F3008A9732;
 			remoteInfo = iOSKit;
+		};
+		39DF5D5A1424B1AA00090805 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 39DF5D471424B1A800090805 /* BlocksKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6C3DBF8D1382F1BA00E6C9AA;
+			remoteInfo = BlocksKit;
+		};
+		39DF5D5C1424B1AA00090805 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 39DF5D471424B1A800090805 /* BlocksKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6CC08FCE1385555D00DDEABB;
+			remoteInfo = "BlocksKit Mac";
+		};
+		39DF5D5E1424B1AA00090805 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 39DF5D471424B1A800090805 /* BlocksKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6CC0900913855CAE00DDEABB;
+			remoteInfo = "BlocksKit Chameleon";
+		};
+		39DF5D601424B1AA00090805 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 39DF5D471424B1A800090805 /* BlocksKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 60FF000713C023CB004A1394;
+			remoteInfo = Tests;
+		};
+		39DF5D681424B1BC00090805 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 39DF5D471424B1A800090805 /* BlocksKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 6C3DBF8C1382F1BA00E6C9AA;
+			remoteInfo = BlocksKit;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -55,6 +94,10 @@
 		39DF5D071424AC3700090805 /* iOSKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = iOSKit.xcodeproj; path = ../iOSKit/iOSKit.xcodeproj; sourceTree = "<group>"; };
 		39DF5D381424AD9800090805 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		39DF5D3A1424ADA100090805 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		39DF5D471424B1A800090805 /* BlocksKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BlocksKit.xcodeproj; path = ../BlocksKit/BlocksKit.xcodeproj; sourceTree = "<group>"; };
+		39DF5D6B1424B20100090805 /* AFNetworking */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AFNetworking; path = ../AFNetworking/AFNetworking; sourceTree = "<group>"; };
+		39DF5D6D1424B22500090805 /* Source */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Source; path = ../MagicalRecord/Source; sourceTree = "<group>"; };
+		39DF5D6F1424B24900090805 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +105,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39DF5D701424B24900090805 /* CoreData.framework in Frameworks */,
+				39DF5D6A1424B1D200090805 /* libBlocksKit.a in Frameworks */,
 				39DF5D3B1424ADA100090805 /* QuartzCore.framework in Frameworks */,
 				39DF5D391424AD9800090805 /* CoreGraphics.framework in Frameworks */,
 				39DF5D191424AC5200090805 /* libiOSKit.a in Frameworks */,
@@ -114,11 +159,15 @@
 		39581C70142299BE00146B4F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				39DF5D071424AC3700090805 /* iOSKit.xcodeproj */,
-				39DF5D3A1424ADA100090805 /* QuartzCore.framework */,
+				39DF5D6B1424B20100090805 /* AFNetworking */,
+				39DF5D6D1424B22500090805 /* Source */,
+				39DF5D6F1424B24900090805 /* CoreData.framework */,
 				39DF5D381424AD9800090805 /* CoreGraphics.framework */,
 				39581C73142299BE00146B4F /* Foundation.framework */,
+				39DF5D3A1424ADA100090805 /* QuartzCore.framework */,
 				39581C71142299BE00146B4F /* UIKit.framework */,
+				39DF5D471424B1A800090805 /* BlocksKit.xcodeproj */,
+				39DF5D071424AC3700090805 /* iOSKit.xcodeproj */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -154,6 +203,17 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		39DF5D481424B1A800090805 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				39DF5D5B1424B1AA00090805 /* libBlocksKit.a */,
+				39DF5D5D1424B1AA00090805 /* BlocksKit.dylib */,
+				39DF5D5F1424B1AA00090805 /* BlocksKit_Chameleon.dylib */,
+				39DF5D611424B1AA00090805 /* Tests.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -168,6 +228,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				39DF5D691424B1BC00090805 /* PBXTargetDependency */,
 				39DF5D181424AC4B00090805 /* PBXTargetDependency */,
 			);
 			name = App;
@@ -196,6 +257,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 39DF5D481424B1A800090805 /* Products */;
+					ProjectRef = 39DF5D471424B1A800090805 /* BlocksKit.xcodeproj */;
+				},
+				{
 					ProductGroup = 39DF5D081424AC3700090805 /* Products */;
 					ProjectRef = 39DF5D071424AC3700090805 /* iOSKit.xcodeproj */;
 				},
@@ -215,6 +280,34 @@
 			remoteRef = 39DF5D121424AC3800090805 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		39DF5D5B1424B1AA00090805 /* libBlocksKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libBlocksKit.a;
+			remoteRef = 39DF5D5A1424B1AA00090805 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		39DF5D5D1424B1AA00090805 /* BlocksKit.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = BlocksKit.dylib;
+			remoteRef = 39DF5D5C1424B1AA00090805 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		39DF5D5F1424B1AA00090805 /* BlocksKit_Chameleon.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = BlocksKit_Chameleon.dylib;
+			remoteRef = 39DF5D5E1424B1AA00090805 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		39DF5D611424B1AA00090805 /* Tests.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Tests.app;
+			remoteRef = 39DF5D601424B1AA00090805 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -223,6 +316,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				39581C7A142299BE00146B4F /* InfoPlist.strings in Resources */,
+				39DF5D6C1424B20100090805 /* AFNetworking in Resources */,
+				39DF5D6E1424B22500090805 /* Source in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +342,11 @@
 			isa = PBXTargetDependency;
 			name = iOSKit;
 			targetProxy = 39DF5D171424AC4B00090805 /* PBXContainerItemProxy */;
+		};
+		39DF5D691424B1BC00090805 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BlocksKit;
+			targetProxy = 39DF5D681424B1BC00090805 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -282,7 +382,10 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "../iOSKit/**";
+				HEADER_SEARCH_PATHS = (
+					"../BlocksKit/**",
+					"../iOSKit/**",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -302,7 +405,10 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "../iOSKit/**";
+				HEADER_SEARCH_PATHS = (
+					"../BlocksKit/**",
+					"../iOSKit/**",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
