@@ -5,4 +5,7 @@
 
 @interface FKBaseViewController : UIViewController
 
+- (void)updateUI;
+- (void)setupForInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
+
 @end

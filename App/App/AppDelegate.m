@@ -22,13 +22,14 @@ $synthesize(rootViewController);
         NSLog(@"NSZombieEnabled / NSAutoreleaseFreedObjectCheckEnabled enabled! Disable for release.");
     }
     
+    // Setup Logging, synchronize UserDefaults
     [self setup];
     
     // Setup Window
     self.rootViewController = [FKBaseViewController viewController];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.backgroundColor = [UIColor blackColor];
     self.window.rootViewController = self.rootViewController;
     [self.window makeKeyAndVisible];
     

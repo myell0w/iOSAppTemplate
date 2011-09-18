@@ -45,6 +45,10 @@
 		397F8190142607BB006B98BD /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 397F8180142607BB006B98BD /* NSPersistentStoreCoordinator+MagicalRecord.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		397F8191142607BB006B98BD /* MagicalRecordHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 397F8183142607BB006B98BD /* MagicalRecordHelpers.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		397F8192142607BB006B98BD /* MRCoreDataAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 397F8185142607BB006B98BD /* MRCoreDataAction.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		397F819814260948006B98BD /* PDKeychainBindings.m in Sources */ = {isa = PBXBuildFile; fileRef = 397F819514260948006B98BD /* PDKeychainBindings.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		397F819914260948006B98BD /* PDKeychainBindingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 397F819714260948006B98BD /* PDKeychainBindingsController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		397F819B14260978006B98BD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 397F819A14260978006B98BD /* Security.framework */; };
+		397F819E14260B00006B98BD /* FKBaseFetchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 397F819D14260B00006B98BD /* FKBaseFetchTableViewController.m */; };
 		39DF5D191424AC5200090805 /* libiOSKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39DF5D131424AC3800090805 /* libiOSKit.a */; };
 		39DF5D391424AD9800090805 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39DF5D381424AD9800090805 /* CoreGraphics.framework */; };
 		39DF5D3B1424ADA100090805 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39DF5D3A1424ADA100090805 /* QuartzCore.framework */; };
@@ -182,6 +186,13 @@
 		397F8183142607BB006B98BD /* MagicalRecordHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicalRecordHelpers.m; sourceTree = "<group>"; };
 		397F8184142607BB006B98BD /* MRCoreDataAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRCoreDataAction.h; sourceTree = "<group>"; };
 		397F8185142607BB006B98BD /* MRCoreDataAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRCoreDataAction.m; sourceTree = "<group>"; };
+		397F819414260948006B98BD /* PDKeychainBindings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDKeychainBindings.h; sourceTree = "<group>"; };
+		397F819514260948006B98BD /* PDKeychainBindings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDKeychainBindings.m; sourceTree = "<group>"; };
+		397F819614260948006B98BD /* PDKeychainBindingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDKeychainBindingsController.h; sourceTree = "<group>"; };
+		397F819714260948006B98BD /* PDKeychainBindingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDKeychainBindingsController.m; sourceTree = "<group>"; };
+		397F819A14260978006B98BD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		397F819C14260B00006B98BD /* FKBaseFetchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKBaseFetchTableViewController.h; sourceTree = "<group>"; };
+		397F819D14260B00006B98BD /* FKBaseFetchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKBaseFetchTableViewController.m; sourceTree = "<group>"; };
 		39DF5D071424AC3700090805 /* iOSKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = iOSKit.xcodeproj; path = ../iOSKit/iOSKit.xcodeproj; sourceTree = "<group>"; };
 		39DF5D381424AD9800090805 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		39DF5D3A1424ADA100090805 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -196,6 +207,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				397F819B14260978006B98BD /* Security.framework in Frameworks */,
 				397F813C14260570006B98BD /* libz.dylib in Frameworks */,
 				397F80E71425EA65006B98BD /* AudioToolbox.framework in Frameworks */,
 				397F80E51425EA4B006B98BD /* MessageUI.framework in Frameworks */,
@@ -228,6 +240,8 @@
 				394EF14314229BB00005C045 /* FKBaseViewController.m */,
 				394EF1971422A2670005C045 /* FKBaseTableViewController.h */,
 				394EF1981422A2670005C045 /* FKBaseTableViewController.m */,
+				397F819C14260B00006B98BD /* FKBaseFetchTableViewController.h */,
+				397F819D14260B00006B98BD /* FKBaseFetchTableViewController.m */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -240,6 +254,7 @@
 				39DF5E0D1424CC6F00090805 /* Network */,
 				39DF5E0C1424CC5A00090805 /* Model */,
 				39DF5E0B1424CC4900090805 /* Views */,
+				397F81BB14260C09006B98BD /* Cells */,
 				394EF14114229BB00005C045 /* View Controller */,
 				39581C75142299BE00146B4F /* App */,
 				39581C70142299BE00146B4F /* Frameworks */,
@@ -265,12 +280,14 @@
 				39581C73142299BE00146B4F /* Foundation.framework */,
 				397F80E41425EA4B006B98BD /* MessageUI.framework */,
 				39DF5D3A1424ADA100090805 /* QuartzCore.framework */,
+				397F819A14260978006B98BD /* Security.framework */,
 				39581C71142299BE00146B4F /* UIKit.framework */,
 				39DF5D471424B1A800090805 /* BlocksKit.xcodeproj */,
 				39DF5D071424AC3700090805 /* iOSKit.xcodeproj */,
 				397F81151425EEEE006B98BD /* AFNetworking */,
 				397F80FC1425EB84006B98BD /* DCIntrospect */,
 				397F8168142607BB006B98BD /* MagicalRecord */,
+				397F819314260947006B98BD /* PDKeychainBindingsController */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -394,6 +411,25 @@
 				397F8174142607BB006B98BD /* NSRelationshipDescription+MagicalDataImport.m */,
 			);
 			path = DataImport;
+			sourceTree = "<group>";
+		};
+		397F819314260947006B98BD /* PDKeychainBindingsController */ = {
+			isa = PBXGroup;
+			children = (
+				397F819414260948006B98BD /* PDKeychainBindings.h */,
+				397F819514260948006B98BD /* PDKeychainBindings.m */,
+				397F819614260948006B98BD /* PDKeychainBindingsController.h */,
+				397F819714260948006B98BD /* PDKeychainBindingsController.m */,
+			);
+			name = PDKeychainBindingsController;
+			path = ../PDKeychainBindingsController/PDKeychainBindingsController;
+			sourceTree = "<group>";
+		};
+		397F81BB14260C09006B98BD /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		39DF5D081424AC3700090805 /* Products */ = {
@@ -598,6 +634,9 @@
 				397F8190142607BB006B98BD /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
 				397F8191142607BB006B98BD /* MagicalRecordHelpers.m in Sources */,
 				397F8192142607BB006B98BD /* MRCoreDataAction.m in Sources */,
+				397F819814260948006B98BD /* PDKeychainBindings.m in Sources */,
+				397F819914260948006B98BD /* PDKeychainBindingsController.m in Sources */,
+				397F819E14260B00006B98BD /* FKBaseFetchTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
