@@ -22,7 +22,7 @@
 ////////////////////////////////////////////////////////////////////////
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
-    return FKRotateOnPad(toInterfaceOrientation);
+    return YES; //FKRotateOnPad(toInterfaceOrientation);
 }
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {

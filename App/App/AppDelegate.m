@@ -1,6 +1,5 @@
 #import "AppDelegate.h"
 #import "FKBaseViewController.h"
-#import "DCIntrospect.h"
 
 @interface AppDelegate ()
 
@@ -84,7 +83,7 @@ $synthesize(rootViewController);
 - (void)postFinishLaunch {
     // visual debugging!
 #ifdef kFKDCIntrospectEnabled
-    [[DCIntrospect sharedIntrospector] start];
+   // [[DCIntrospect sharedIntrospector] start];
 #endif
     
 }
