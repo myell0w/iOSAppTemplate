@@ -16,6 +16,10 @@
 		39581C80142299BE00146B4F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 39581C7F142299BE00146B4F /* AppDelegate.m */; };
 		397F80E51425EA4B006B98BD /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 397F80E41425EA4B006B98BD /* MessageUI.framework */; };
 		397F80E71425EA65006B98BD /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 397F80E61425EA65006B98BD /* AudioToolbox.framework */; };
+		397F81061425EB84006B98BD /* DCCrossHairView.m in Sources */ = {isa = PBXBuildFile; fileRef = 397F80FE1425EB84006B98BD /* DCCrossHairView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		397F81071425EB84006B98BD /* DCFrameView.m in Sources */ = {isa = PBXBuildFile; fileRef = 397F81001425EB84006B98BD /* DCFrameView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		397F81081425EB84006B98BD /* DCIntrospect.m in Sources */ = {isa = PBXBuildFile; fileRef = 397F81021425EB84006B98BD /* DCIntrospect.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		397F81091425EB84006B98BD /* DCStatusBarOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 397F81051425EB84006B98BD /* DCStatusBarOverlay.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		39DF5D191424AC5200090805 /* libiOSKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39DF5D131424AC3800090805 /* libiOSKit.a */; };
 		39DF5D391424AD9800090805 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39DF5D381424AD9800090805 /* CoreGraphics.framework */; };
 		39DF5D3B1424ADA100090805 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39DF5D3A1424ADA100090805 /* QuartzCore.framework */; };
@@ -94,6 +98,15 @@
 		39581C7F142299BE00146B4F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		397F80E41425EA4B006B98BD /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		397F80E61425EA65006B98BD /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		397F80FD1425EB84006B98BD /* DCCrossHairView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCCrossHairView.h; sourceTree = "<group>"; };
+		397F80FE1425EB84006B98BD /* DCCrossHairView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCCrossHairView.m; sourceTree = "<group>"; };
+		397F80FF1425EB84006B98BD /* DCFrameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCFrameView.h; sourceTree = "<group>"; };
+		397F81001425EB84006B98BD /* DCFrameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCFrameView.m; sourceTree = "<group>"; };
+		397F81011425EB84006B98BD /* DCIntrospect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCIntrospect.h; sourceTree = "<group>"; };
+		397F81021425EB84006B98BD /* DCIntrospect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCIntrospect.m; sourceTree = "<group>"; };
+		397F81031425EB84006B98BD /* DCIntrospectSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCIntrospectSettings.h; sourceTree = "<group>"; };
+		397F81041425EB84006B98BD /* DCStatusBarOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCStatusBarOverlay.h; sourceTree = "<group>"; };
+		397F81051425EB84006B98BD /* DCStatusBarOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCStatusBarOverlay.m; sourceTree = "<group>"; };
 		39DF5D071424AC3700090805 /* iOSKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = iOSKit.xcodeproj; path = ../iOSKit/iOSKit.xcodeproj; sourceTree = "<group>"; };
 		39DF5D381424AD9800090805 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		39DF5D3A1424ADA100090805 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -169,6 +182,7 @@
 		39581C70142299BE00146B4F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				397F80FC1425EB84006B98BD /* DCIntrospect */,
 				397F80E61425EA65006B98BD /* AudioToolbox.framework */,
 				39DF5D6F1424B24900090805 /* CoreData.framework */,
 				39DF5D381424AD9800090805 /* CoreGraphics.framework */,
@@ -203,6 +217,23 @@
 				39581C7D142299BE00146B4F /* Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		397F80FC1425EB84006B98BD /* DCIntrospect */ = {
+			isa = PBXGroup;
+			children = (
+				397F80FD1425EB84006B98BD /* DCCrossHairView.h */,
+				397F80FE1425EB84006B98BD /* DCCrossHairView.m */,
+				397F80FF1425EB84006B98BD /* DCFrameView.h */,
+				397F81001425EB84006B98BD /* DCFrameView.m */,
+				397F81011425EB84006B98BD /* DCIntrospect.h */,
+				397F81021425EB84006B98BD /* DCIntrospect.m */,
+				397F81031425EB84006B98BD /* DCIntrospectSettings.h */,
+				397F81041425EB84006B98BD /* DCStatusBarOverlay.h */,
+				397F81051425EB84006B98BD /* DCStatusBarOverlay.m */,
+			);
+			name = DCIntrospect;
+			path = ../DCIntrospect/DCIntrospect;
 			sourceTree = "<group>";
 		};
 		39DF5D081424AC3700090805 /* Products */ = {
@@ -379,6 +410,10 @@
 				394EF14514229BB00005C045 /* FKBaseViewController.m in Sources */,
 				394EF1991422A2670005C045 /* FKBaseTableViewController.m in Sources */,
 				39DF5E121424CCAC00090805 /* NSUserDefaults+FKAppAdditions.m in Sources */,
+				397F81061425EB84006B98BD /* DCCrossHairView.m in Sources */,
+				397F81071425EB84006B98BD /* DCFrameView.m in Sources */,
+				397F81081425EB84006B98BD /* DCIntrospect.m in Sources */,
+				397F81091425EB84006B98BD /* DCStatusBarOverlay.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,25 +450,28 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "CONFIGURATION_$(CONFIGURATION)";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_MULTIPLE_DEFINITION_TYPES_FOR_SELECTOR = NO;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = NO;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
 					"../BlocksKit/**",
 					"../iOSKit/**",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
@@ -449,18 +487,25 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = RELEASE;
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "CONFIGURATION_$(CONFIGURATION)";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_MULTIPLE_DEFINITION_TYPES_FOR_SELECTOR = NO;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = NO;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
 					"../BlocksKit/**",
 					"../iOSKit/**",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = (
 					"-all_load",
