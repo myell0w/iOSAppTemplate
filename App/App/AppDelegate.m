@@ -17,13 +17,13 @@ $synthesize(window);
 $synthesize(rootViewController);
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // Setup Logging, synchronize UserDefaults
+    [self setup];
+    
     // check for NSZombie (memory leak if enabled, but very useful!)
     if(getenv("NSZombieEnabled") || getenv("NSAutoreleaseFreedObjectCheckEnabled")) {
         NSLog(@"NSZombieEnabled / NSAutoreleaseFreedObjectCheckEnabled enabled! Disable for release.");
     }
-    
-    // Setup Logging, synchronize UserDefaults
-    [self setup];
     
     // Setup Window
     self.rootViewController = [FKBaseViewController viewController];
