@@ -10,10 +10,23 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
-
+        sendInitialReachabilityNotification = YES;
     }
     
     return self;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [[FKReachability sharedReachability] setupReachabilityFor:self
+                                      sendInitialNotification:sendInitialReachabilityNotification];
+}
+
+- (void)viewDidUnload {
+    [super viewDidUnload];
+    
+    [[FKReachability sharedReachability] shutdownReachabilityFor:self];
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -22,7 +35,7 @@
 ////////////////////////////////////////////////////////////////////////
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
-    return FKRotateOnPad(toInterfaceOrientation);
+    return FKRotateToAllSupportedOrientations(toInterfaceOrientation);
 }
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {

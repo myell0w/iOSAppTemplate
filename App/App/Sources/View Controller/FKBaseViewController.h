@@ -3,7 +3,9 @@
 #import <UIKit/UIKit.h>
 #import "FKIncludes.h"
 
-@interface FKBaseViewController : UIViewController
+@interface FKBaseViewController : UIViewController <FKReachabilityAware> {
+    BOOL sendInitialReachabilityNotification;
+}
 
 - (void)updateUI;
 - (void)setupForInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;

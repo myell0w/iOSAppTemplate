@@ -70,6 +70,16 @@ $synthesize(rootViewController);
     [self applicationPrepareForBackgroundOrTermination:application];
 }
 
+///////////////////////////////////////////////////////////////////////
+#pragma mark -
+#pragma mark Reachability
+///////////////////////////////////////////////////////////////////////
+
+- (void)configureForNetworkStatus:(NSNotification *)notification {
+    // NetworkStatus networkStatus = FKReachabilityGetNetworkStatus(notification);
+    
+}
+
 ////////////////////////////////////////////////////////////////////////
 #pragma mark -
 #pragma mark Private
@@ -88,6 +98,9 @@ $synthesize(rootViewController);
     [[DCIntrospect sharedIntrospector] start];
 #endif
     
+    // Setup Reachability
+    [[FKReachability sharedReachability] startCheckingHostAddress:kFKReachabilityHostAddress];
+    [[FKReachability sharedReachability] setupReachabilityFor:self];
 }
 
 - (void)setup {

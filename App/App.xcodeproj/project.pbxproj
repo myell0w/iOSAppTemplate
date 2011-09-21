@@ -49,6 +49,9 @@
 		397F819914260948006B98BD /* PDKeychainBindingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 397F819714260948006B98BD /* PDKeychainBindingsController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		397F819B14260978006B98BD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 397F819A14260978006B98BD /* Security.framework */; };
 		397F819E14260B00006B98BD /* FKBaseFetchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 397F819D14260B00006B98BD /* FKBaseFetchTableViewController.m */; };
+		39AA0FEB142A015300C6956C /* Reachability+FKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 39AA0FE8142A015300C6956C /* Reachability+FKAdditions.m */; };
+		39AA0FEC142A015300C6956C /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 39AA0FEA142A015300C6956C /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		39AA0FF9142A0B1600C6956C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39AA0FF8142A0B1600C6956C /* SystemConfiguration.framework */; };
 		39DF5D191424AC5200090805 /* libiOSKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39DF5D131424AC3800090805 /* libiOSKit.a */; };
 		39DF5D391424AD9800090805 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39DF5D381424AD9800090805 /* CoreGraphics.framework */; };
 		39DF5D3B1424ADA100090805 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39DF5D3A1424ADA100090805 /* QuartzCore.framework */; };
@@ -193,6 +196,11 @@
 		397F819A14260978006B98BD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		397F819C14260B00006B98BD /* FKBaseFetchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKBaseFetchTableViewController.h; sourceTree = "<group>"; };
 		397F819D14260B00006B98BD /* FKBaseFetchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKBaseFetchTableViewController.m; sourceTree = "<group>"; };
+		39AA0FE7142A015300C6956C /* Reachability+FKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Reachability+FKAdditions.h"; sourceTree = "<group>"; };
+		39AA0FE8142A015300C6956C /* Reachability+FKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Reachability+FKAdditions.m"; sourceTree = "<group>"; };
+		39AA0FE9142A015300C6956C /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		39AA0FEA142A015300C6956C /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		39AA0FF8142A0B1600C6956C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		39DF5D071424AC3700090805 /* iOSKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = iOSKit.xcodeproj; path = ../iOSKit/iOSKit.xcodeproj; sourceTree = "<group>"; };
 		39DF5D381424AD9800090805 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		39DF5D3A1424ADA100090805 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -207,6 +215,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39AA0FF9142A0B1600C6956C /* SystemConfiguration.framework in Frameworks */,
 				397F819B14260978006B98BD /* Security.framework in Frameworks */,
 				397F813C14260570006B98BD /* libz.dylib in Frameworks */,
 				397F80E71425EA65006B98BD /* AudioToolbox.framework in Frameworks */,
@@ -281,6 +290,7 @@
 				397F80E41425EA4B006B98BD /* MessageUI.framework */,
 				39DF5D3A1424ADA100090805 /* QuartzCore.framework */,
 				397F819A14260978006B98BD /* Security.framework */,
+				39AA0FF8142A0B1600C6956C /* SystemConfiguration.framework */,
 				39581C71142299BE00146B4F /* UIKit.framework */,
 				39DF5D471424B1A800090805 /* BlocksKit.xcodeproj */,
 				39DF5D071424AC3700090805 /* iOSKit.xcodeproj */,
@@ -288,6 +298,7 @@
 				397F80FC1425EB84006B98BD /* DCIntrospect */,
 				397F8168142607BB006B98BD /* MagicalRecord */,
 				397F819314260947006B98BD /* PDKeychainBindingsController */,
+				39AA0FE6142A015300C6956C /* Reachability */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -430,6 +441,18 @@
 			children = (
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		39AA0FE6142A015300C6956C /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				39AA0FE7142A015300C6956C /* Reachability+FKAdditions.h */,
+				39AA0FE8142A015300C6956C /* Reachability+FKAdditions.m */,
+				39AA0FE9142A015300C6956C /* Reachability.h */,
+				39AA0FEA142A015300C6956C /* Reachability.m */,
+			);
+			name = Reachability;
+			path = ../../iOSKit/Sources/Optional/Reachability;
 			sourceTree = "<group>";
 		};
 		39DF5D081424AC3700090805 /* Products */ = {
@@ -637,6 +660,8 @@
 				397F819814260948006B98BD /* PDKeychainBindings.m in Sources */,
 				397F819914260948006B98BD /* PDKeychainBindingsController.m in Sources */,
 				397F819E14260B00006B98BD /* FKBaseFetchTableViewController.m in Sources */,
+				39AA0FEB142A015300C6956C /* Reachability+FKAdditions.m in Sources */,
+				39AA0FEC142A015300C6956C /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

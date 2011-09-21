@@ -7,6 +7,7 @@
 // Frameworks
 #import "FoundationKit.h"
 #import "iOSKit.h"
+#import "Reachability+FKAdditions.h"
 #import "BlocksKit.h"
 
 // App-intern
