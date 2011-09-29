@@ -10,6 +10,11 @@
 #import "Reachability+FKAdditions.h"
 #import "BlocksKit.h"
 
+// Logging
+#import "DDLog.h"
+
+static const int ddLogLevel = LOG_LEVEL_INFO;
+
 // App-intern
 #import "FKDefines.h"
 #import "NSUserDefaults+FKAppAdditions.h"

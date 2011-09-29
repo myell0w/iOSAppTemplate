@@ -16,3 +16,6 @@
 [submodule "DCIntrospect"]
 	path = DCIntrospect
 	url = git://github.com/foundationkit/DCIntrospect.git
+[submodule "CocoaLumberjack"]
+	path = CocoaLumberjack
+	url = git@github.com:foundationkit/CocoaLumberjack.git

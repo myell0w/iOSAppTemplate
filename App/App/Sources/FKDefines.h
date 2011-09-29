@@ -13,10 +13,21 @@
 
 ////////////////////////////////////////////////////////////////////////
 #pragma mark -
+#pragma mark Logging
+////////////////////////////////////////////////////////////////////////
+
+#define FKLogVerbose(...) DDLogVerbose(__VA_ARGS__)
+#define FKLogInfo(...)    DDLogInfo(__VA_ARGS__)
+#define FKLogWarning(...) DDLogWarn(__VA_ARGS__)
+#define FKLogError(...)   DDLogError(__VA_ARGS__)
+#define Log(...)          FKLogInfo(@"%@", FKLogToString(__VA_ARGS__))
+
+////////////////////////////////////////////////////////////////////////
+#pragma mark -
 #pragma mark Notifications
 ////////////////////////////////////////////////////////////////////////
 
-#define kFKApplicationWillSuspendNotification     @"kApplicationWillSuspendNotification"
+#define kFKApplicationWillSuspendNotification     @"kFKApplicationWillSuspendNotification"
 
 ////////////////////////////////////////////////////////////////////////
 #pragma mark -
