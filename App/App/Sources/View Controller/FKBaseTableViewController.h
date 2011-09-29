@@ -2,15 +2,23 @@
 
 #import "FKBaseViewController.h"
 
+/**
+ This class serves as the superclass for all tableViewControllers in the App
+ */
 @interface FKBaseTableViewController : FKBaseViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, assign, readonly) UITableViewStyle tableViewStyle;
+/** Flag to control if the tableView shows shadows on top and bottom */
 @property (nonatomic, assign) BOOL useShadows;
 
+/** The designated initializer of the tableViewController */
 - (id)initWithStyle:(UITableViewStyle)style;
 
-// Subclasses can override to customize even more
+/** 
+ Returns a customized tableView, subclasses can override to customize more
+ @return a shadowed tableView, if useShadows = YES, else a normal tableView
+ */
 - (UITableView *)customizedTableView;
 
 @end

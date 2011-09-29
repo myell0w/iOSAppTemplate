@@ -1,6 +1,5 @@
 // Part of iOSAppTemplate http://foundationk.it
 
-#import <UIKit/UIKit.h>
 #import "Reachability+FKAdditions.h"
 
 @class FKBaseViewController;

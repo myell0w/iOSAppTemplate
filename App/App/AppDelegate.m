@@ -63,6 +63,7 @@ $synthesize(rootViewController);
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     [self applicationPrepareForBackgroundOrTermination:application];
+    [MagicalRecordHelpers cleanUp];
 }
 
 ///////////////////////////////////////////////////////////////////////
@@ -81,10 +82,12 @@ $synthesize(rootViewController);
 ////////////////////////////////////////////////////////////////////////
 
 - (void)applicationPrepareForBackgroundOrTermination:(UIApplication *)application {
-    // DDLogInfo(@"detected application termination.");
+    FKLogInfo(@"detected application termination.");
     
     // post notification to all listeners
     [[NSNotificationCenter defaultCenter] postNotificationName:kFKApplicationWillSuspendNotification object:application];
+    // save CoreData-Context for mainThread
+    [[NSManagedObjectContext defaultContext] save];
 }
 
 - (void)postFinishLaunch {
@@ -108,7 +111,10 @@ $synthesize(rootViewController);
     [[DDTTYLogger sharedInstance] setLogFormatter:logFormatter];
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
     
-#ifdef DEBUG
+    // Setup CoreData
+    [MagicalRecordHelpers setupCoreDataStackWithAutoMigratingSqliteStoreNamed:FKApplicationName()];
+    
+#ifdef kFKLogToFile
     // log to file
     DDFileLogger *fileLogger = [[DDFileLogger alloc] init];
     fileLogger.rollingFrequency = FKTimeIntervalDays(1);

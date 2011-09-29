@@ -7,9 +7,9 @@
 #pragma mark FKBaseFetchTableViewController
 ////////////////////////////////////////////////////////////////////////
 
+// Subclasses must override
 - (NSFetchedResultsController *)fetchedResultsController {
-    // Subclasses must override
-    [self doesNotRecognizeSelector:_cmd];
+    FKNotImplemented();
     return nil;
 }
 

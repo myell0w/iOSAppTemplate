@@ -1,9 +1,8 @@
 // Part of iOSAppTemplate http://foundationk.it
 
-#import <Foundation/Foundation.h>
-
-// Use this to add property-shortcuts for all UserDefaults
-
-@interface NSUserDefaults (FKAppAdditions)
+/**
+ This category is used to add property-shortcuts for all NSUserDefaults-Values
+ */
+ @interface NSUserDefaults (FKAppAdditions)
 
 @end
