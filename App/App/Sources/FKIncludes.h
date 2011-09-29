@@ -18,4 +18,8 @@
 #import "DDLog.h"
 
 // Defined log-level
+#if DEBUG
 static const int ddLogLevel = LOG_LEVEL_INFO;
+#else
+static const int ddLogLevel = LOG_LEVEL_WARN;
+#endif
