@@ -47,12 +47,6 @@
 		39DF5D6A1424B1D200090805 /* libBlocksKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39DF5D5B1424B1AA00090805 /* libBlocksKit.a */; };
 		39DF5D701424B24900090805 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39DF5D6F1424B24900090805 /* CoreData.framework */; };
 		39DF5E121424CCAC00090805 /* NSUserDefaults+FKAppAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DF5E111424CCAC00090805 /* NSUserDefaults+FKAppAdditions.m */; };
-		39E85BA31434F3DE008FC8D5 /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 39E85B9A1434F3DE008FC8D5 /* DDAbstractDatabaseLogger.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		39E85BA41434F3DE008FC8D5 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 39E85B9C1434F3DE008FC8D5 /* DDASLLogger.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		39E85BA51434F3DE008FC8D5 /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 39E85B9E1434F3DE008FC8D5 /* DDFileLogger.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		39E85BA61434F3DE008FC8D5 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 39E85BA01434F3DE008FC8D5 /* DDLog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		39E85BA71434F3DE008FC8D5 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 39E85BA21434F3DE008FC8D5 /* DDTTYLogger.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		39E85BB41434F894008FC8D5 /* FKLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 39E85BB31434F894008FC8D5 /* FKLogFormatter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		39E85BC41434F9B7008FC8D5 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 39E85BB71434F9B7008FC8D5 /* AFHTTPClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		39E85BC51434F9B7008FC8D5 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 39E85BB91434F9B7008FC8D5 /* AFHTTPRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		39E85BC61434F9B7008FC8D5 /* AFImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 39E85BBB1434F9B7008FC8D5 /* AFImageCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -115,6 +109,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3915BEAE14365B0E009534A3 /* FKLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKLogging.h; path = App/Sources/Utilities/Logging/FKLogging.h; sourceTree = "<group>"; };
 		394EF14214229BB00005C045 /* FKBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKBaseViewController.h; sourceTree = "<group>"; };
 		394EF14314229BB00005C045 /* FKBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKBaseViewController.m; sourceTree = "<group>"; };
 		394EF14414229BB00005C045 /* FKIncludes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKIncludes.h; path = Sources/FKIncludes.h; sourceTree = "<group>"; };
@@ -188,18 +183,6 @@
 		39DF5D6F1424B24900090805 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		39DF5E101424CCAC00090805 /* NSUserDefaults+FKAppAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSUserDefaults+FKAppAdditions.h"; path = "App/Sources/Categories/NSUserDefaults+FKAppAdditions.h"; sourceTree = "<group>"; };
 		39DF5E111424CCAC00090805 /* NSUserDefaults+FKAppAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSUserDefaults+FKAppAdditions.m"; path = "App/Sources/Categories/NSUserDefaults+FKAppAdditions.m"; sourceTree = "<group>"; };
-		39E85B991434F3DE008FC8D5 /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
-		39E85B9A1434F3DE008FC8D5 /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
-		39E85B9B1434F3DE008FC8D5 /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogger.h; sourceTree = "<group>"; };
-		39E85B9C1434F3DE008FC8D5 /* DDASLLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDASLLogger.m; sourceTree = "<group>"; };
-		39E85B9D1434F3DE008FC8D5 /* DDFileLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDFileLogger.h; sourceTree = "<group>"; };
-		39E85B9E1434F3DE008FC8D5 /* DDFileLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDFileLogger.m; sourceTree = "<group>"; };
-		39E85B9F1434F3DE008FC8D5 /* DDLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDLog.h; sourceTree = "<group>"; };
-		39E85BA01434F3DE008FC8D5 /* DDLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDLog.m; sourceTree = "<group>"; };
-		39E85BA11434F3DE008FC8D5 /* DDTTYLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTTYLogger.h; sourceTree = "<group>"; };
-		39E85BA21434F3DE008FC8D5 /* DDTTYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTTYLogger.m; sourceTree = "<group>"; };
-		39E85BB21434F894008FC8D5 /* FKLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKLogFormatter.h; sourceTree = "<group>"; };
-		39E85BB31434F894008FC8D5 /* FKLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKLogFormatter.m; sourceTree = "<group>"; };
 		39E85BB61434F9B7008FC8D5 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		39E85BB71434F9B7008FC8D5 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
 		39E85BB81434F9B7008FC8D5 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -239,6 +222,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3915BEAD14365AE5009534A3 /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				3915BEAE14365B0E009534A3 /* FKLogging.h */,
+			);
+			name = Logging;
+			sourceTree = "<group>";
+		};
 		394EF14114229BB00005C045 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,8 +293,6 @@
 				39DF5D071424AC3700090805 /* iOSKit.xcodeproj */,
 				39E85BB51434F9B7008FC8D5 /* AFNetworking */,
 				397F80FC1425EB84006B98BD /* DCIntrospect */,
-				39E85B981434F3DE008FC8D5 /* Lumberjack */,
-				39E85BB11434F894008FC8D5 /* Lumberjack+FKAdditions */,
 				397F8168142607BB006B98BD /* MagicalRecord */,
 				397F819314260947006B98BD /* PDKeychainBindingsController */,
 				39AA0FE6142A015300C6956C /* Reachability */,
@@ -477,6 +466,7 @@
 		39DF5E0E1424CC7700090805 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				3915BEAD14365AE5009534A3 /* Logging */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -488,34 +478,6 @@
 				39DF5E111424CCAC00090805 /* NSUserDefaults+FKAppAdditions.m */,
 			);
 			name = Categories;
-			sourceTree = "<group>";
-		};
-		39E85B981434F3DE008FC8D5 /* Lumberjack */ = {
-			isa = PBXGroup;
-			children = (
-				39E85B991434F3DE008FC8D5 /* DDAbstractDatabaseLogger.h */,
-				39E85B9A1434F3DE008FC8D5 /* DDAbstractDatabaseLogger.m */,
-				39E85B9B1434F3DE008FC8D5 /* DDASLLogger.h */,
-				39E85B9C1434F3DE008FC8D5 /* DDASLLogger.m */,
-				39E85B9D1434F3DE008FC8D5 /* DDFileLogger.h */,
-				39E85B9E1434F3DE008FC8D5 /* DDFileLogger.m */,
-				39E85B9F1434F3DE008FC8D5 /* DDLog.h */,
-				39E85BA01434F3DE008FC8D5 /* DDLog.m */,
-				39E85BA11434F3DE008FC8D5 /* DDTTYLogger.h */,
-				39E85BA21434F3DE008FC8D5 /* DDTTYLogger.m */,
-			);
-			name = Lumberjack;
-			path = ../CocoaLumberjack/Lumberjack;
-			sourceTree = "<group>";
-		};
-		39E85BB11434F894008FC8D5 /* Lumberjack+FKAdditions */ = {
-			isa = PBXGroup;
-			children = (
-				39E85BB21434F894008FC8D5 /* FKLogFormatter.h */,
-				39E85BB31434F894008FC8D5 /* FKLogFormatter.m */,
-			);
-			name = "Lumberjack+FKAdditions";
-			path = "../../CocoaLumberjack/Lumberjack+FKAdditions";
 			sourceTree = "<group>";
 		};
 		39E85BB51434F9B7008FC8D5 /* AFNetworking */ = {
@@ -679,12 +641,6 @@
 				397F819E14260B00006B98BD /* FKBaseFetchTableViewController.m in Sources */,
 				39AA0FEB142A015300C6956C /* Reachability+FKAdditions.m in Sources */,
 				39AA0FEC142A015300C6956C /* Reachability.m in Sources */,
-				39E85BA31434F3DE008FC8D5 /* DDAbstractDatabaseLogger.m in Sources */,
-				39E85BA41434F3DE008FC8D5 /* DDASLLogger.m in Sources */,
-				39E85BA51434F3DE008FC8D5 /* DDFileLogger.m in Sources */,
-				39E85BA61434F3DE008FC8D5 /* DDLog.m in Sources */,
-				39E85BA71434F3DE008FC8D5 /* DDTTYLogger.m in Sources */,
-				39E85BB41434F894008FC8D5 /* FKLogFormatter.m in Sources */,
 				39E85BC41434F9B7008FC8D5 /* AFHTTPClient.m in Sources */,
 				39E85BC51434F9B7008FC8D5 /* AFHTTPRequestOperation.m in Sources */,
 				39E85BC61434F9B7008FC8D5 /* AFImageCache.m in Sources */,

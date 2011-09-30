@@ -1,11 +1,7 @@
 #import "AppDelegate.h"
 #import "DCIntrospect.h"
 #import "FKBaseViewController.h"
-#import "FKLogFormatter.h"
-#import "DDTTYLogger.h"
-#import "DDFileLogger.h"
 #import "FKDefines.h"
-
 
 @interface AppDelegate ()
 
@@ -106,21 +102,8 @@ $synthesize(rootViewController);
     [[NSUserDefaults standardUserDefaults] registerDefaultsFromSettingsBundle];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    // Setup Logger
-    FKLogFormatter *logFormatter = [[FKLogFormatter alloc] init];
-    [[DDTTYLogger sharedInstance] setLogFormatter:logFormatter];
-    [DDLog addLogger:[DDTTYLogger sharedInstance]];
-    
     // Setup CoreData
     [MagicalRecordHelpers setupCoreDataStackWithAutoMigratingSqliteStoreNamed:FKApplicationName()];
-    
-#ifdef kFKLogToFile
-    // log to file
-    DDFileLogger *fileLogger = [[DDFileLogger alloc] init];
-    fileLogger.rollingFrequency = FKTimeIntervalDays(1);
-    fileLogger.logFileManager.maximumNumberOfLogFiles = 7;
-    [DDLog addLogger:fileLogger];
-#endif
 }
 
 @end

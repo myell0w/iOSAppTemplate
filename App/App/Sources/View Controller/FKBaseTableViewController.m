@@ -112,10 +112,12 @@ $synthesize(useShadows);
 ////////////////////////////////////////////////////////////////////////
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    FKLogNotImplemented();
     return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    FKLogNotImplemented();
     return nil;
 }
 

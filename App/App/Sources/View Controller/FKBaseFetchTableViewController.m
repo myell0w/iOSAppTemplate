@@ -9,7 +9,7 @@
 
 // Subclasses must override
 - (NSFetchedResultsController *)fetchedResultsController {
-    FKNotImplemented();
+    FKLogNotImplemented();
     return nil;
 }
 
