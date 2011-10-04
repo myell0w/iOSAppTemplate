@@ -31,3 +31,4 @@
 ////////////////////////////////////////////////////////////////////////
 
 #define kFKReachabilityHostAddress                  @"www.google.at"
+#define kFKHockeyKitUpdateURL                       @"www.yourotadistributionserver.com/betaapps/

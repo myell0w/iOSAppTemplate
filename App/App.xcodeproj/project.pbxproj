@@ -54,6 +54,18 @@
 		39E85BC81434F9B7008FC8D5 /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 39E85BBF1434F9B7008FC8D5 /* AFJSONRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		39E85BC91434F9B7008FC8D5 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 39E85BC11434F9B7008FC8D5 /* AFNetworkActivityIndicatorManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		39E85BCA1434F9B7008FC8D5 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 39E85BC31434F9B7008FC8D5 /* UIImageView+AFNetworking.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		6A86993F143B58DC0095FA00 /* BWApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A869929143B58DB0095FA00 /* BWApp.m */; };
+		6A869940143B58DC0095FA00 /* BWGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A86992B143B58DB0095FA00 /* BWGlobal.m */; };
+		6A869941143B58DC0095FA00 /* BWHockeyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A86992D143B58DB0095FA00 /* BWHockeyManager.m */; };
+		6A869942143B58DC0095FA00 /* BWHockeySettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A86992F143B58DB0095FA00 /* BWHockeySettingsViewController.m */; };
+		6A869943143B58DC0095FA00 /* BWHockeyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A869931143B58DB0095FA00 /* BWHockeyViewController.m */; };
+		6A869944143B58DC0095FA00 /* NSString+HockeyAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A869934143B58DB0095FA00 /* NSString+HockeyAdditions.m */; };
+		6A869945143B58DC0095FA00 /* PSAppStoreHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A869936143B58DB0095FA00 /* PSAppStoreHeader.m */; };
+		6A869946143B58DC0095FA00 /* PSStoreButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A869938143B58DB0095FA00 /* PSStoreButton.m */; };
+		6A869947143B58DC0095FA00 /* PSWebTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A86993A143B58DB0095FA00 /* PSWebTableViewCell.m */; };
+		6A869948143B58DC0095FA00 /* UIImage+HockeyAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A86993C143B58DB0095FA00 /* UIImage+HockeyAdditions.m */; };
+		6A869949143B58DC0095FA00 /* Hockey.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6A86993D143B58DB0095FA00 /* Hockey.bundle */; };
+		6A86994A143B58DC0095FA00 /* README.mkdown in Resources */ = {isa = PBXBuildFile; fileRef = 6A86993E143B58DB0095FA00 /* README.mkdown */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -197,6 +209,28 @@
 		39E85BC11434F9B7008FC8D5 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityIndicatorManager.m; sourceTree = "<group>"; };
 		39E85BC21434F9B7008FC8D5 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		39E85BC31434F9B7008FC8D5 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		6A869928143B58DB0095FA00 /* BWApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BWApp.h; path = ../HockeyKit/client/iOS/BWApp.h; sourceTree = "<group>"; };
+		6A869929143B58DB0095FA00 /* BWApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BWApp.m; path = ../HockeyKit/client/iOS/BWApp.m; sourceTree = "<group>"; };
+		6A86992A143B58DB0095FA00 /* BWGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BWGlobal.h; path = ../HockeyKit/client/iOS/BWGlobal.h; sourceTree = "<group>"; };
+		6A86992B143B58DB0095FA00 /* BWGlobal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BWGlobal.m; path = ../HockeyKit/client/iOS/BWGlobal.m; sourceTree = "<group>"; };
+		6A86992C143B58DB0095FA00 /* BWHockeyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BWHockeyManager.h; path = ../HockeyKit/client/iOS/BWHockeyManager.h; sourceTree = "<group>"; };
+		6A86992D143B58DB0095FA00 /* BWHockeyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BWHockeyManager.m; path = ../HockeyKit/client/iOS/BWHockeyManager.m; sourceTree = "<group>"; };
+		6A86992E143B58DB0095FA00 /* BWHockeySettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BWHockeySettingsViewController.h; path = ../HockeyKit/client/iOS/BWHockeySettingsViewController.h; sourceTree = "<group>"; };
+		6A86992F143B58DB0095FA00 /* BWHockeySettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BWHockeySettingsViewController.m; path = ../HockeyKit/client/iOS/BWHockeySettingsViewController.m; sourceTree = "<group>"; };
+		6A869930143B58DB0095FA00 /* BWHockeyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BWHockeyViewController.h; path = ../HockeyKit/client/iOS/BWHockeyViewController.h; sourceTree = "<group>"; };
+		6A869931143B58DB0095FA00 /* BWHockeyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BWHockeyViewController.m; path = ../HockeyKit/client/iOS/BWHockeyViewController.m; sourceTree = "<group>"; };
+		6A869933143B58DB0095FA00 /* NSString+HockeyAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HockeyAdditions.h"; sourceTree = "<group>"; };
+		6A869934143B58DB0095FA00 /* NSString+HockeyAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HockeyAdditions.m"; sourceTree = "<group>"; };
+		6A869935143B58DB0095FA00 /* PSAppStoreHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSAppStoreHeader.h; sourceTree = "<group>"; };
+		6A869936143B58DB0095FA00 /* PSAppStoreHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSAppStoreHeader.m; sourceTree = "<group>"; };
+		6A869937143B58DB0095FA00 /* PSStoreButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSStoreButton.h; sourceTree = "<group>"; };
+		6A869938143B58DB0095FA00 /* PSStoreButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSStoreButton.m; sourceTree = "<group>"; };
+		6A869939143B58DB0095FA00 /* PSWebTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSWebTableViewCell.h; sourceTree = "<group>"; };
+		6A86993A143B58DB0095FA00 /* PSWebTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSWebTableViewCell.m; sourceTree = "<group>"; };
+		6A86993B143B58DB0095FA00 /* UIImage+HockeyAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+HockeyAdditions.h"; sourceTree = "<group>"; };
+		6A86993C143B58DB0095FA00 /* UIImage+HockeyAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+HockeyAdditions.m"; sourceTree = "<group>"; };
+		6A86993D143B58DB0095FA00 /* Hockey.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Hockey.bundle; path = ../HockeyKit/client/iOS/Hockey.bundle; sourceTree = "<group>"; };
+		6A86993E143B58DB0095FA00 /* README.mkdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.mkdown; path = ../HockeyKit/client/iOS/README.mkdown; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -293,6 +327,7 @@
 				39DF5D071424AC3700090805 /* iOSKit.xcodeproj */,
 				39E85BB51434F9B7008FC8D5 /* AFNetworking */,
 				397F80FC1425EB84006B98BD /* DCIntrospect */,
+				6A86994C143B58E20095FA00 /* HockeyKit */,
 				397F8168142607BB006B98BD /* MagicalRecord */,
 				397F819314260947006B98BD /* PDKeychainBindingsController */,
 				39AA0FE6142A015300C6956C /* Reachability */,
@@ -502,6 +537,44 @@
 			path = ../AFNetworking/AFNetworking;
 			sourceTree = "<group>";
 		};
+		6A869932143B58DB0095FA00 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				6A869933143B58DB0095FA00 /* NSString+HockeyAdditions.h */,
+				6A869934143B58DB0095FA00 /* NSString+HockeyAdditions.m */,
+				6A869935143B58DB0095FA00 /* PSAppStoreHeader.h */,
+				6A869936143B58DB0095FA00 /* PSAppStoreHeader.m */,
+				6A869937143B58DB0095FA00 /* PSStoreButton.h */,
+				6A869938143B58DB0095FA00 /* PSStoreButton.m */,
+				6A869939143B58DB0095FA00 /* PSWebTableViewCell.h */,
+				6A86993A143B58DB0095FA00 /* PSWebTableViewCell.m */,
+				6A86993B143B58DB0095FA00 /* UIImage+HockeyAdditions.h */,
+				6A86993C143B58DB0095FA00 /* UIImage+HockeyAdditions.m */,
+			);
+			name = Helper;
+			path = ../HockeyKit/client/iOS/Helper;
+			sourceTree = "<group>";
+		};
+		6A86994C143B58E20095FA00 /* HockeyKit */ = {
+			isa = PBXGroup;
+			children = (
+				6A869928143B58DB0095FA00 /* BWApp.h */,
+				6A869929143B58DB0095FA00 /* BWApp.m */,
+				6A86992A143B58DB0095FA00 /* BWGlobal.h */,
+				6A86992B143B58DB0095FA00 /* BWGlobal.m */,
+				6A86992C143B58DB0095FA00 /* BWHockeyManager.h */,
+				6A86992D143B58DB0095FA00 /* BWHockeyManager.m */,
+				6A86992E143B58DB0095FA00 /* BWHockeySettingsViewController.h */,
+				6A86992F143B58DB0095FA00 /* BWHockeySettingsViewController.m */,
+				6A869930143B58DB0095FA00 /* BWHockeyViewController.h */,
+				6A869931143B58DB0095FA00 /* BWHockeyViewController.m */,
+				6A869932143B58DB0095FA00 /* Helper */,
+				6A86993D143B58DB0095FA00 /* Hockey.bundle */,
+				6A86993E143B58DB0095FA00 /* README.mkdown */,
+			);
+			name = HockeyKit;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -604,6 +677,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				39581C7A142299BE00146B4F /* InfoPlist.strings in Resources */,
+				6A869949143B58DC0095FA00 /* Hockey.bundle in Resources */,
+				6A86994A143B58DC0095FA00 /* README.mkdown in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -648,6 +723,16 @@
 				39E85BC81434F9B7008FC8D5 /* AFJSONRequestOperation.m in Sources */,
 				39E85BC91434F9B7008FC8D5 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				39E85BCA1434F9B7008FC8D5 /* UIImageView+AFNetworking.m in Sources */,
+				6A86993F143B58DC0095FA00 /* BWApp.m in Sources */,
+				6A869940143B58DC0095FA00 /* BWGlobal.m in Sources */,
+				6A869941143B58DC0095FA00 /* BWHockeyManager.m in Sources */,
+				6A869942143B58DC0095FA00 /* BWHockeySettingsViewController.m in Sources */,
+				6A869943143B58DC0095FA00 /* BWHockeyViewController.m in Sources */,
+				6A869944143B58DC0095FA00 /* NSString+HockeyAdditions.m in Sources */,
+				6A869945143B58DC0095FA00 /* PSAppStoreHeader.m in Sources */,
+				6A869946143B58DC0095FA00 /* PSStoreButton.m in Sources */,
+				6A869947143B58DC0095FA00 /* PSWebTableViewCell.m in Sources */,
+				6A869948143B58DC0095FA00 /* UIImage+HockeyAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -702,6 +787,7 @@
 				GCC_WARN_UNUSED_FUNCTION = NO;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
+					"../HockeyKit/**",
 					"../BlocksKit/**",
 					"../iOSKit/**",
 				);
@@ -733,6 +819,7 @@
 				GCC_WARN_UNUSED_FUNCTION = NO;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
+					"../HockeyKit/**",
 					"../BlocksKit/**",
 					"../iOSKit/**",
 				);

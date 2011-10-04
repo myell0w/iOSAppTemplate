@@ -17,3 +17,6 @@
 	path = DCIntrospect
 	url = git://github.com/foundationkit/DCIntrospect.git
 
+[submodule "HockeyKit"]
+	path = HockeyKit
+	url = https://github.com/TheRealKerni/HockeyKit.git

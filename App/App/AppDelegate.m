@@ -3,6 +3,10 @@
 #import "FKBaseViewController.h"
 #import "FKDefines.h"
 
+#ifndef APPSTORE
+#import "BWHockeyManager.h"
+#endif
+
 @interface AppDelegate ()
 
 - (void)applicationPrepareForBackgroundOrTermination:(UIApplication *)application;
@@ -90,6 +94,10 @@ $synthesize(rootViewController);
     // visual debugging!
 #ifdef kFKDCIntrospectEnabled
     [[DCIntrospect sharedIntrospector] start];
+#endif
+    
+#ifndef APPSTORE
+    [BWHockeyManager sharedHockeyManager].updateURL = kFKHockeyKitUpdateURL;
 #endif
     
     // Setup Reachability
