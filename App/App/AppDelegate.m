@@ -29,7 +29,7 @@ $synthesize(rootViewController);
     
     // check for NSZombie (memory leak if enabled, but very useful!)
     if(getenv("NSZombieEnabled") || getenv("NSAutoreleaseFreedObjectCheckEnabled")) {
-        FKLogWarning(@"NSZombieEnabled / NSAutoreleaseFreedObjectCheckEnabled enabled! Disable for release.");
+        FKLogWarning(@"NSZombieEnabled/NSAutoreleaseFreedObjectCheckEnabled enabled, disable for release!");
     }
     
     // Setup Window

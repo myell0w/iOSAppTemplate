@@ -41,6 +41,8 @@
 		39AA0FEB142A015300C6956C /* Reachability+FKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 39AA0FE8142A015300C6956C /* Reachability+FKAdditions.m */; };
 		39AA0FEC142A015300C6956C /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 39AA0FEA142A015300C6956C /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		39AA0FF9142A0B1600C6956C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39AA0FF8142A0B1600C6956C /* SystemConfiguration.framework */; };
+		39DEEB87143CF1B700B81BB5 /* NSManagedObject+FKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DEEB84143CF1B700B81BB5 /* NSManagedObject+FKAdditions.m */; };
+		39DEEB88143CF1B700B81BB5 /* UIViewController+FKAnimatedFetchedResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DEEB86143CF1B700B81BB5 /* UIViewController+FKAnimatedFetchedResultsController.m */; };
 		39DF5D191424AC5200090805 /* libiOSKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39DF5D131424AC3800090805 /* libiOSKit.a */; };
 		39DF5D391424AD9800090805 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39DF5D381424AD9800090805 /* CoreGraphics.framework */; };
 		39DF5D3B1424ADA100090805 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39DF5D3A1424ADA100090805 /* QuartzCore.framework */; };
@@ -188,6 +190,10 @@
 		39AA0FE9142A015300C6956C /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		39AA0FEA142A015300C6956C /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		39AA0FF8142A0B1600C6956C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		39DEEB83143CF1B700B81BB5 /* NSManagedObject+FKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+FKAdditions.h"; sourceTree = "<group>"; };
+		39DEEB84143CF1B700B81BB5 /* NSManagedObject+FKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+FKAdditions.m"; sourceTree = "<group>"; };
+		39DEEB85143CF1B700B81BB5 /* UIViewController+FKAnimatedFetchedResultsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+FKAnimatedFetchedResultsController.h"; sourceTree = "<group>"; };
+		39DEEB86143CF1B700B81BB5 /* UIViewController+FKAnimatedFetchedResultsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+FKAnimatedFetchedResultsController.m"; sourceTree = "<group>"; };
 		39DF5D071424AC3700090805 /* iOSKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = iOSKit.xcodeproj; path = ../iOSKit/iOSKit.xcodeproj; sourceTree = "<group>"; };
 		39DF5D381424AD9800090805 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		39DF5D3A1424ADA100090805 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -326,6 +332,7 @@
 				39DF5D471424B1A800090805 /* BlocksKit.xcodeproj */,
 				39DF5D071424AC3700090805 /* iOSKit.xcodeproj */,
 				39E85BB51434F9B7008FC8D5 /* AFNetworking */,
+				39DEEB82143CF1B700B81BB5 /* FoundationKit CoreData */,
 				397F80FC1425EB84006B98BD /* DCIntrospect */,
 				6A86994C143B58E20095FA00 /* HockeyKit */,
 				397F8168142607BB006B98BD /* MagicalRecord */,
@@ -455,6 +462,18 @@
 			);
 			name = Reachability;
 			path = ../../iOSKit/Sources/Optional/Reachability;
+			sourceTree = "<group>";
+		};
+		39DEEB82143CF1B700B81BB5 /* FoundationKit CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				39DEEB83143CF1B700B81BB5 /* NSManagedObject+FKAdditions.h */,
+				39DEEB84143CF1B700B81BB5 /* NSManagedObject+FKAdditions.m */,
+				39DEEB85143CF1B700B81BB5 /* UIViewController+FKAnimatedFetchedResultsController.h */,
+				39DEEB86143CF1B700B81BB5 /* UIViewController+FKAnimatedFetchedResultsController.m */,
+			);
+			name = "FoundationKit CoreData";
+			path = "../iOSKit/FoundationKit/Sources/Optional/Core Data";
 			sourceTree = "<group>";
 		};
 		39DF5D081424AC3700090805 /* Products */ = {
@@ -733,6 +752,8 @@
 				6A869946143B58DC0095FA00 /* PSStoreButton.m in Sources */,
 				6A869947143B58DC0095FA00 /* PSWebTableViewCell.m in Sources */,
 				6A869948143B58DC0095FA00 /* UIImage+HockeyAdditions.m in Sources */,
+				39DEEB87143CF1B700B81BB5 /* NSManagedObject+FKAdditions.m in Sources */,
+				39DEEB88143CF1B700B81BB5 /* UIViewController+FKAnimatedFetchedResultsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

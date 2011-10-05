@@ -1,4 +1,5 @@
 #import "FKBaseFetchTableViewController.h"
+#import "UIViewController+FKAnimatedFetchedResultsController.h"
 
 @implementation FKBaseFetchTableViewController
 
@@ -63,11 +64,11 @@
 ////////////////////////////////////////////////////////////////////////
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller { 
-	//[self handleController:controller willChangeContentForTableView:self.tableView];
+	[self handleController:controller willChangeContentForTableView:self.tableView];
 }
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller { 
-	//[self handleController:controller didChangeContentForTableView:self.tableView];
+	[self handleController:controller didChangeContentForTableView:self.tableView];
     [self updateUI];
 }
 
@@ -77,12 +78,12 @@
      forChangeType:(NSFetchedResultsChangeType)type
       newIndexPath:(NSIndexPath *)newIndexPath { 
     
-//    [self handleController:controller
-//           didChangeObject:anObject
-//               atIndexPath:indexPath
-//             forChangeType:type
-//              newIndexPath:newIndexPath
-//                 tableView:self.tableView];
+    [self handleController:controller
+           didChangeObject:anObject
+               atIndexPath:indexPath
+             forChangeType:type
+              newIndexPath:newIndexPath
+                 tableView:self.tableView];
 }
 
 - (void)controller:(NSFetchedResultsController *)controller 
@@ -90,11 +91,11 @@
            atIndex:(NSUInteger)sectionIndex 
      forChangeType:(NSFetchedResultsChangeType)type {
 	
-//    [self handleController:controller
-//          didChangeSection:sectionInfo
-//                   atIndex:sectionIndex
-//             forChangeType:type
-//                 tableView:self.tableView];
+    [self handleController:controller
+          didChangeSection:sectionInfo
+                   atIndex:sectionIndex
+             forChangeType:type
+                 tableView:self.tableView];
 }
 
 
