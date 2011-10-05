@@ -4,6 +4,10 @@
 #import "FKDefines.h"
 #import "AFJSONRequestOperation.h"
 
+#ifndef APPSTORE
+#import "BWHockeyManager.h"
+#endif
+
 @interface AppDelegate ()
 
 - (void)applicationPrepareForBackgroundOrTermination:(UIApplication *)application;
@@ -96,6 +100,10 @@ $synthesize(rootViewController);
     
 #ifdef kFKLoadNagMessage
     [self loadNagMessage];
+#endif
+    
+#ifdef kFKUseHockeyKit
+    [BWHockeyManager sharedHockeyManager].updateURL = kFKHockeyKitUpdateURL;
 #endif
     
     // Listen for Reachability Notifications

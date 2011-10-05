@@ -12,8 +12,14 @@
 // the URL we load the nag-message from
 #define kFKNagMessageURL                            @"TODO"
 
+// DCInstrospect, awesome visual debugging
 #if TARGET_IPHONE_SIMULATOR
-  #define kFKDCIntrospectEnabled                    // DCInstrospect, awesome visual debugging
+  #define kFKDCIntrospectEnabled
+#endif
+
+// HockeyKit for Beta Updates
+#ifdef DEBUG
+    #define kFKUseHockeyKit
 #endif
 
 ////////////////////////////////////////////////////////////////////////
@@ -36,3 +42,4 @@
 ////////////////////////////////////////////////////////////////////////
 
 #define kFKReachabilityHostAddress                  @"www.google.at"
+#define kFKHockeyKitUpdateURL                       @"www.yourotadistributionserver.com/betaapps/"
