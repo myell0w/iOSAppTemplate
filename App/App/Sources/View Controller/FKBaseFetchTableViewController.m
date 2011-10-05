@@ -15,6 +15,30 @@
 
 ////////////////////////////////////////////////////////////////////////
 #pragma mark -
+#pragma mark UIViewController
+////////////////////////////////////////////////////////////////////////
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    NSError *error = nil;
+    FKAssert([self.fetchedResultsController performFetch:&error], @"Unable to perform fetch on NSFetchedResultsController: %@", [error localizedDescription]);
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    self.fetchedResultsController.delegate = self;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    self.fetchedResultsController.delegate = nil;
+}
+
+////////////////////////////////////////////////////////////////////////
+#pragma mark -
 #pragma mark UITableViewDataSource
 ////////////////////////////////////////////////////////////////////////
 

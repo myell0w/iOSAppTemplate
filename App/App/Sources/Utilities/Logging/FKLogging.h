@@ -26,13 +26,13 @@ typedef enum {
 NS_INLINE NSString* FKLogLevelDescription(FKLogLevel logLevel) {
     switch (logLevel) {
         case FKLogLevelVerbose:
-            return @"|V|";
+            return @"<V>";
             
         case FKLogLevelInfo:
-            return @"|I|";
+            return @"<I>";
             
         case FKLogLevelWarning:
-            return @"|W|";
+            return @"<W>";
             
         case FKLogLevelError:
             return @"!E!";

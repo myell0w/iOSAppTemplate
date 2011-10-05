@@ -5,7 +5,12 @@
 #pragma mark Template Configuration
 ////////////////////////////////////////////////////////////////////////
 
+// time interval in seconds after which additional setup is done after app startup
 #define kFKPostFinishLaunchDelay                    FKTimeIntervalSeconds(1.5)
+// if defined, we try to load a nag-message from a defined URL that can be shown in the app
+#define kFKLoadNagMessage
+// the URL we load the nag-message from
+#define kFKNagMessageURL                            @"TODO"
 
 #if TARGET_IPHONE_SIMULATOR
   #define kFKDCIntrospectEnabled                    // DCInstrospect, awesome visual debugging

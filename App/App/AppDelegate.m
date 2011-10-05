@@ -2,6 +2,7 @@
 #import "DCIntrospect.h"
 #import "FKBaseViewController.h"
 #import "FKDefines.h"
+#import "AFJSONRequestOperation.h"
 
 @interface AppDelegate ()
 
@@ -9,6 +10,7 @@
 
 - (void)postFinishLaunch;
 - (void)setup;
+- (void)loadNagMessage;
 
 @end
 
@@ -92,8 +94,11 @@ $synthesize(rootViewController);
     [[DCIntrospect sharedIntrospector] start];
 #endif
     
-    // Setup Reachability
-    [[FKReachability sharedReachability] startCheckingHostAddress:kFKReachabilityHostAddress];
+#ifdef kFKLoadNagMessage
+    [self loadNagMessage];
+#endif
+    
+    // Listen for Reachability Notifications
     [[FKReachability sharedReachability] setupReachabilityFor:self];
 }
 
@@ -104,6 +109,26 @@ $synthesize(rootViewController);
     
     // Setup CoreData
     [MagicalRecordHelpers setupCoreDataStackWithAutoMigratingSqliteStoreNamed:FKApplicationName()];
+    
+    // Setup Reachability
+    [[FKReachability sharedReachability] startCheckingHostAddress:kFKReachabilityHostAddress];
+}
+
+- (void)loadNagMessage {
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:kFKNagMessageURL]];
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation operationWithRequest:request success:^(id JSON) {
+        BOOL showNagMessage = [[JSON valueForKey:@"showNagMessage"] boolValue];
+        
+        if (showNagMessage) {
+            NSString *title = [JSON valueForKey:@"title"];
+            NSString *message = [JSON valueForKey:@"message"];
+            
+            UIAlertView *alertView = [UIAlertView alertWithTitle:title message:message];
+            [alertView show];
+         }
+    }];
+    
+    [operation start];
 }
 
 @end
