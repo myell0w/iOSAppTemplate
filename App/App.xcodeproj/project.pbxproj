@@ -54,16 +54,16 @@
 		39E85BC81434F9B7008FC8D5 /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 39E85BBF1434F9B7008FC8D5 /* AFJSONRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		39E85BC91434F9B7008FC8D5 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 39E85BC11434F9B7008FC8D5 /* AFNetworkActivityIndicatorManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		39E85BCA1434F9B7008FC8D5 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 39E85BC31434F9B7008FC8D5 /* UIImageView+AFNetworking.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		6A86993F143B58DC0095FA00 /* BWApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A869929143B58DB0095FA00 /* BWApp.m */; };
-		6A869940143B58DC0095FA00 /* BWGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A86992B143B58DB0095FA00 /* BWGlobal.m */; };
-		6A869941143B58DC0095FA00 /* BWHockeyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A86992D143B58DB0095FA00 /* BWHockeyManager.m */; };
-		6A869942143B58DC0095FA00 /* BWHockeySettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A86992F143B58DB0095FA00 /* BWHockeySettingsViewController.m */; };
-		6A869943143B58DC0095FA00 /* BWHockeyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A869931143B58DB0095FA00 /* BWHockeyViewController.m */; };
-		6A869944143B58DC0095FA00 /* NSString+HockeyAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A869934143B58DB0095FA00 /* NSString+HockeyAdditions.m */; };
-		6A869945143B58DC0095FA00 /* PSAppStoreHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A869936143B58DB0095FA00 /* PSAppStoreHeader.m */; };
-		6A869946143B58DC0095FA00 /* PSStoreButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A869938143B58DB0095FA00 /* PSStoreButton.m */; };
-		6A869947143B58DC0095FA00 /* PSWebTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A86993A143B58DB0095FA00 /* PSWebTableViewCell.m */; };
-		6A869948143B58DC0095FA00 /* UIImage+HockeyAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A86993C143B58DB0095FA00 /* UIImage+HockeyAdditions.m */; };
+		6A86993F143B58DC0095FA00 /* BWApp.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A869929143B58DB0095FA00 /* BWApp.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		6A869940143B58DC0095FA00 /* BWGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A86992B143B58DB0095FA00 /* BWGlobal.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		6A869941143B58DC0095FA00 /* BWHockeyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A86992D143B58DB0095FA00 /* BWHockeyManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		6A869942143B58DC0095FA00 /* BWHockeySettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A86992F143B58DB0095FA00 /* BWHockeySettingsViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		6A869943143B58DC0095FA00 /* BWHockeyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A869931143B58DB0095FA00 /* BWHockeyViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		6A869944143B58DC0095FA00 /* NSString+HockeyAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A869934143B58DB0095FA00 /* NSString+HockeyAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		6A869945143B58DC0095FA00 /* PSAppStoreHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A869936143B58DB0095FA00 /* PSAppStoreHeader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		6A869946143B58DC0095FA00 /* PSStoreButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A869938143B58DB0095FA00 /* PSStoreButton.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		6A869947143B58DC0095FA00 /* PSWebTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A86993A143B58DB0095FA00 /* PSWebTableViewCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		6A869948143B58DC0095FA00 /* UIImage+HockeyAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A86993C143B58DB0095FA00 /* UIImage+HockeyAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6A869949143B58DC0095FA00 /* Hockey.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6A86993D143B58DB0095FA00 /* Hockey.bundle */; };
 		6A86994A143B58DC0095FA00 /* README.mkdown in Resources */ = {isa = PBXBuildFile; fileRef = 6A86993E143B58DB0095FA00 /* README.mkdown */; };
 /* End PBXBuildFile section */

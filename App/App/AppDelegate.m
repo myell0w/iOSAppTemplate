@@ -4,7 +4,7 @@
 #import "FKDefines.h"
 #import "AFJSONRequestOperation.h"
 
-#ifndef APPSTORE
+#ifdef kFKUseHockeyKit
 #import "BWHockeyManager.h"
 #endif
 
