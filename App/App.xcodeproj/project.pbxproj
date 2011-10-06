@@ -6,6 +6,21 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		39DEEBA5143DBAC800B81BB5 /* BetaDistribute */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 39DEEBA6143DBAC800B81BB5 /* Build configuration list for PBXAggregateTarget "BetaDistribute" */;
+			buildPhases = (
+				39DEEBAE143DBB8600B81BB5 /* ShellScript */,
+			);
+			dependencies = (
+				39DEEBAA143DBAD000B81BB5 /* PBXTargetDependency */,
+			);
+			name = BetaDistribute;
+			productName = BetaDistribute;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		394EF14514229BB00005C045 /* FKBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 394EF14314229BB00005C045 /* FKBaseViewController.m */; };
 		394EF1991422A2670005C045 /* FKBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 394EF1981422A2670005C045 /* FKBaseTableViewController.m */; };
@@ -71,6 +86,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		39DEEBA9143DBAD000B81BB5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 39581C64142299BE00146B4F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 39581C6C142299BE00146B4F;
+			remoteInfo = App;
+		};
 		39DF5D121424AC3800090805 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 39DF5D071424AC3700090805 /* iOSKit.xcodeproj */;
@@ -648,6 +670,7 @@
 			projectRoot = "";
 			targets = (
 				39581C6C142299BE00146B4F /* App */,
+				39DEEBA5143DBAC800B81BB5 /* BetaDistribute */,
 			);
 		};
 /* End PBXProject section */
@@ -702,6 +725,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		39DEEBAE143DBB8600B81BB5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = /Users/Matthias/Projects/iOS/Foundation/iOSAppTemplate/Scripts/BetaDistribution.sh;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		39581C69142299BE00146B4F /* Sources */ = {
@@ -760,6 +799,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		39DEEBAA143DBAD000B81BB5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 39581C6C142299BE00146B4F /* App */;
+			targetProxy = 39DEEBA9143DBAD000B81BB5 /* PBXContainerItemProxy */;
+		};
 		39DF5D181424AC4B00090805 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = iOSKit;
@@ -875,6 +919,20 @@
 			};
 			name = Release;
 		};
+		39DEEBA7143DBAC800B81BB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		39DEEBA8143DBAC800B81BB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -895,6 +953,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		39DEEBA6143DBAC800B81BB5 /* Build configuration list for PBXAggregateTarget "BetaDistribute" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39DEEBA7143DBAC800B81BB5 /* Debug */,
+				39DEEBA8143DBAC800B81BB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
