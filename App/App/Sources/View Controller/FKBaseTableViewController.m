@@ -1,4 +1,5 @@
 #import "FKBaseTableViewController.h"
+#import "UITableView+FKPlaceholder.h"
 
 @interface FKBaseTableViewController ()
 
@@ -76,6 +77,25 @@ $synthesize(useShadows);
     
     self.tableView.delegate = nil;
     self.tableView.dataSource = nil;
+}
+
+////////////////////////////////////////////////////////////////////////
+#pragma mark -
+#pragma mark FKBaseViewController
+////////////////////////////////////////////////////////////////////////
+
+- (void)updateUI {
+    [super updateUI];
+    
+    // If the tableView has no data, show placeholder instead
+    // Subclasses must implement the delegate-method contentUnavailableViewForTableView:
+    
+    // TODO: does this check work, to determine if tableView is empty?
+    if (self.tableView.visibleCells.count == 0) {
+        [self.tableView setContentUnavailableViewHidden:NO];
+    } else {
+        [self.tableView setContentUnavailableViewHidden:YES];
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////

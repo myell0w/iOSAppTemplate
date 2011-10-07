@@ -961,6 +961,7 @@
 				39DEEBA8143DBAC800B81BB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
