@@ -68,7 +68,7 @@ $synthesize(useShadows);
     
     if (animated) {
         [self.tableView flashScrollIndicators];
-        [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
+        [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
     }
 }
 

@@ -29,6 +29,13 @@
     [[FKReachability sharedReachability] shutdownReachabilityFor:self];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [[UIDevice currentDevice] simulateMemoryWarning];
+    FKLogVerbose(@"Received simulated memory warning");
+}
+
 ////////////////////////////////////////////////////////////////////////
 #pragma mark -
 #pragma mark Rotation
