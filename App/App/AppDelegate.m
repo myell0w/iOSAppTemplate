@@ -56,7 +56,9 @@ $synthesize(rootViewController);
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-   
+   dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+       [[NSUserDefaults standardUserDefaults] synchronize];
+   });
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
@@ -113,7 +115,6 @@ $synthesize(rootViewController);
 - (void)setup {
     // Setup UserDefaults
     [[NSUserDefaults standardUserDefaults] registerDefaultsFromSettingsBundle];
-    [[NSUserDefaults standardUserDefaults] synchronize];
     
     // Setup CoreData
     [MagicalRecordHelpers setupCoreDataStackWithAutoMigratingSqliteStoreNamed:FKApplicationName()];
