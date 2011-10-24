@@ -12,8 +12,9 @@
 
 - (void)applicationPrepareForBackgroundOrTermination:(UIApplication *)application;
 
-- (void)postFinishLaunch;
 - (void)setup;
+- (void)postFinishLaunch;
+- (void)synchronizedUserDefaultsAndUpdateUI;
 - (void)loadNagMessage;
 
 @end
@@ -40,6 +41,8 @@ $synthesize(rootViewController);
     self.window.rootViewController = self.rootViewController;
     [self.window makeKeyAndVisible];
     
+    [self synchronizedUserDefaultsAndUpdateUI];
+    
     if (kFKPostFinishLaunchDelay > 0.) {
         [self performSelector:@selector(postFinishLaunch) withObject:nil afterDelay:kFKPostFinishLaunchDelay];
     }
@@ -52,13 +55,11 @@ $synthesize(rootViewController);
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-   
+    [self synchronizedUserDefaultsAndUpdateUI];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-   dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-       [[NSUserDefaults standardUserDefaults] synchronize];
-   });
+   
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
@@ -94,6 +95,17 @@ $synthesize(rootViewController);
     [[NSManagedObjectContext defaultContext] save];
 }
 
+- (void)setup {
+    // Setup UserDefaults
+    [[NSUserDefaults standardUserDefaults] registerDefaultsFromSettingsBundle];
+    
+    // Setup CoreData
+    [MagicalRecordHelpers setupCoreDataStackWithAutoMigratingSqliteStoreNamed:FKApplicationName()];
+    
+    // Setup Reachability
+    [[FKReachability sharedReachability] startCheckingHostAddress:kFKReachabilityHostAddress];
+}
+
 - (void)postFinishLaunch {
     // visual debugging!
 #ifdef kFKDCIntrospectEnabled
@@ -112,15 +124,10 @@ $synthesize(rootViewController);
     [[FKReachability sharedReachability] setupReachabilityFor:self];
 }
 
-- (void)setup {
-    // Setup UserDefaults
-    [[NSUserDefaults standardUserDefaults] registerDefaultsFromSettingsBundle];
-    
-    // Setup CoreData
-    [MagicalRecordHelpers setupCoreDataStackWithAutoMigratingSqliteStoreNamed:FKApplicationName()];
-    
-    // Setup Reachability
-    [[FKReachability sharedReachability] startCheckingHostAddress:kFKReachabilityHostAddress];
+- (void)synchronizedUserDefaultsAndUpdateUI {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    });
 }
 
 - (void)loadNagMessage {
