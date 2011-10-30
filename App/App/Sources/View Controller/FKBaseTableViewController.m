@@ -5,6 +5,9 @@
 
 @property (nonatomic, assign, readwrite) UITableViewStyle tableViewStyle;
 
+- (void)keyboardWillShow:(NSNotification *)notification;
+- (void)keyboardWillHide:(NSNotification *)notification;
+
 @end
 
 @implementation FKBaseTableViewController
@@ -12,6 +15,7 @@
 $synthesize(tableView);
 $synthesize(tableViewStyle);
 $synthesize(useShadows);
+$synthesize(clearsSelectionOnViewWillAppear);
 
 ////////////////////////////////////////////////////////////////////////
 #pragma mark -
@@ -22,6 +26,7 @@ $synthesize(useShadows);
     if ((self = [super initWithNibName:nil bundle:nil])) {
         tableViewStyle_ = style;
         useShadows_ = NO;
+        clearsSelectionOnViewWillAppear_ = YES;
     }
     
     return self;
@@ -61,15 +66,23 @@ $synthesize(useShadows);
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    
+    if (clearsSelectionOnViewWillAppear_) {
+        [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
+    }
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(keyboardWillShow:) 
+                                                 name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(keyboardWillHide:) 
+                                                 name:UIKeyboardWillHideNotification object:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    if (animated) {
-        [self.tableView flashScrollIndicators];
-        [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
-    }
+    [self.tableView flashScrollIndicators];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -77,6 +90,15 @@ $synthesize(useShadows);
     
     self.tableView.delegate = nil;
     self.tableView.dataSource = nil;
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+}
+
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated {
+    [super setEditing:editing animated:animated];
+    
+    [self.tableView setEditing:editing animated:animated];
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -115,7 +137,7 @@ $synthesize(useShadows);
     UITableView *tableView = nil;
     
     if (self.useShadows) {
-       // TODO: Use shadowed tableView
+        // TODO: Use shadowed tableView
         tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:self.tableViewStyle];
     } else {
         tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:self.tableViewStyle];
@@ -139,6 +161,50 @@ $synthesize(useShadows);
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FKLogNotImplemented();
     return nil;
+}
+
+////////////////////////////////////////////////////////////////////////
+#pragma mark -
+#pragma mark Private
+////////////////////////////////////////////////////////////////////////
+
+- (void)keyboardWillShow:(NSNotification *)notification {
+	// keyboard frame is in window coordinates
+	NSDictionary *userInfo = [notification userInfo];
+	CGRect keyboardFrame = [[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    NSTimeInterval animationDuration = [[userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    UIViewAnimationCurve animationCurve = [[userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey] intValue];
+    
+	// convert own frame to window coordinates, frame is in superview's coordinates
+	CGRect ownFrame = [self.tableView.window convertRect:self.tableView.frame fromView:self.tableView.superview];
+    
+	// calculate the area of own frame that is covered by keyboard
+	CGRect coveredFrame = CGRectIntersection(ownFrame, keyboardFrame);
+    
+	// now this might be rotated, so convert it back
+	coveredFrame = [self.tableView.window convertRect:coveredFrame toView:self.tableView.superview];
+    
+    [UIView animateWithDuration:animationDuration 
+                          delay:0.f
+                        options:(UIViewAnimationOptions)animationCurve
+                     animations:^{
+                         // set inset to make up for covered array at bottom
+                         [self.tableView setContentAndScrollIndicatorInset:UIEdgeInsetsMake(0.f, 0.f, coveredFrame.size.height, 0.f)];
+                     } completion:nil];
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification {
+    NSDictionary *userInfo = [notification userInfo];
+    NSTimeInterval animationDuration = [[userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    UIViewAnimationCurve animationCurve = [[userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey] intValue];
+    
+    [UIView animateWithDuration:animationDuration 
+                          delay:0.f
+                        options:(UIViewAnimationOptions)animationCurve
+                     animations:^{
+                         [self.tableView setContentAndScrollIndicatorInset:UIEdgeInsetsMake(0.f, 0.f, 0.f, 0.f)];
+                     } completion:nil];
+    
 }
 
 @end

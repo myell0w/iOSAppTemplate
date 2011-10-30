@@ -7,6 +7,6 @@
  */
 @interface FKBaseFetchTableViewController : FKBaseTableViewController <NSFetchedResultsControllerDelegate>
 
-@property (nonatomic, readonly) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, strong, readonly) NSFetchedResultsController *fetchedResultsController;
 
 @end

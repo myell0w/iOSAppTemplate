@@ -32,8 +32,10 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
+    [self updateUI];
+    
     [[UIDevice currentDevice] simulateMemoryWarning];
-    FKLogVerbose(@"Received simulated memory warning");
+    FKLogVerbose(@"Received simulated memory warning.");
 }
 
 ////////////////////////////////////////////////////////////////////////

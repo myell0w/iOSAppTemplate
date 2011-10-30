@@ -3,6 +3,17 @@
 
 @implementation FKBaseFetchTableViewController
 
+$synthesize(fetchedResultsController);
+
+////////////////////////////////////////////////////////////////////////
+#pragma mark -
+#pragma mark Lifecycle
+////////////////////////////////////////////////////////////////////////
+
+- (void)dealloc {
+    fetchedResultsController_.delegate = nil;
+}
+
 ////////////////////////////////////////////////////////////////////////
 #pragma mark -
 #pragma mark FKBaseFetchTableViewController
@@ -23,19 +34,16 @@
     [super viewDidLoad];
     
     NSError *error = nil;
-    FKAssert([self.fetchedResultsController performFetch:&error], @"Unable to perform fetch on NSFetchedResultsController: %@", [error localizedDescription]);
+    FKAssert([self.fetchedResultsController performFetch:&error],
+             @"Unable to perform fetch on NSFetchedResultsController: %@", 
+             [error localizedDescription]);
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    self.fetchedResultsController.delegate = self;
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
+- (void)viewDidUnload {
+    [super viewDidUnload];
     
     self.fetchedResultsController.delegate = nil;
+    fetchedResultsController_ = nil;
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -52,7 +60,7 @@
     
     if (self.fetchedResultsController.sections.count > 0) {
         id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController.sections objectAtIndex:section];
-        numberOfRows = [sectionInfo numberOfObjects];
+        numberOfRows = sectionInfo.numberOfObjects;
     }
     
     return numberOfRows;
@@ -64,11 +72,21 @@
 ////////////////////////////////////////////////////////////////////////
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller { 
-	[self handleController:controller willChangeContentForTableView:self.tableView];
+    if (self.viewVisible) {
+        [self handleController:controller willChangeContentForTableView:self.tableView];
+    }
 }
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller { 
-	[self handleController:controller didChangeContentForTableView:self.tableView];
+    if (self.viewVisible) {
+        [self handleController:controller didChangeContentForTableView:self.tableView];
+    } else {
+        // reload data and set selected on same cell as before
+        UITableViewCell *selectedCell = [self.tableView cellForRowAtIndexPath:self.tableView.indexPathForSelectedRow];
+        [self.tableView reloadData];
+        [selectedCell setSelected:YES animated:NO];
+    }
+    
     [self updateUI];
 }
 
@@ -78,12 +96,14 @@
      forChangeType:(NSFetchedResultsChangeType)type
       newIndexPath:(NSIndexPath *)newIndexPath { 
     
-    [self handleController:controller
-           didChangeObject:anObject
-               atIndexPath:indexPath
-             forChangeType:type
-              newIndexPath:newIndexPath
-                 tableView:self.tableView];
+    if (self.viewVisible) {
+        [self handleController:controller
+               didChangeObject:anObject
+                   atIndexPath:indexPath
+                 forChangeType:type
+                  newIndexPath:newIndexPath
+                     tableView:self.tableView];
+    }
 }
 
 - (void)controller:(NSFetchedResultsController *)controller 
@@ -91,11 +111,13 @@
            atIndex:(NSUInteger)sectionIndex 
      forChangeType:(NSFetchedResultsChangeType)type {
 	
-    [self handleController:controller
-          didChangeSection:sectionInfo
-                   atIndex:sectionIndex
-             forChangeType:type
-                 tableView:self.tableView];
+    if (self.viewVisible) {
+        [self handleController:controller
+              didChangeSection:sectionInfo
+                       atIndex:sectionIndex
+                 forChangeType:type
+                     tableView:self.tableView];
+    }
 }
 
 
