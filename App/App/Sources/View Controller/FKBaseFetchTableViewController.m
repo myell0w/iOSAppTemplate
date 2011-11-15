@@ -4,11 +4,20 @@
 @implementation FKBaseFetchTableViewController
 
 $synthesize(fetchedResultsController);
+$synthesize(updateAnimated);
 
 ////////////////////////////////////////////////////////////////////////
 #pragma mark -
 #pragma mark Lifecycle
 ////////////////////////////////////////////////////////////////////////
+
+- (id)initWithStyle:(UITableViewStyle)style {
+    if ((self = [super initWithStyle:style])) {
+        updateAnimated_ = YES;
+    }
+    
+    return self;
+}
 
 - (void)dealloc {
     fetchedResultsController_.delegate = nil;
@@ -72,13 +81,13 @@ $synthesize(fetchedResultsController);
 ////////////////////////////////////////////////////////////////////////
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller { 
-    if (self.viewVisible) {
+    if (self.viewVisible && self.updateAnimated) {
         [self handleController:controller willChangeContentForTableView:self.tableView];
     }
 }
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller { 
-    if (self.viewVisible) {
+    if (self.viewVisible && self.updateAnimated) {
         [self handleController:controller didChangeContentForTableView:self.tableView];
     } else {
         // reload data and set selected on same cell as before
@@ -96,7 +105,7 @@ $synthesize(fetchedResultsController);
      forChangeType:(NSFetchedResultsChangeType)type
       newIndexPath:(NSIndexPath *)newIndexPath { 
     
-    if (self.viewVisible) {
+    if (self.viewVisible && self.updateAnimated) {
         [self handleController:controller
                didChangeObject:anObject
                    atIndexPath:indexPath
@@ -111,7 +120,7 @@ $synthesize(fetchedResultsController);
            atIndex:(NSUInteger)sectionIndex 
      forChangeType:(NSFetchedResultsChangeType)type {
 	
-    if (self.viewVisible) {
+    if (self.viewVisible && self.updateAnimated) {
         [self handleController:controller
               didChangeSection:sectionInfo
                        atIndex:sectionIndex
