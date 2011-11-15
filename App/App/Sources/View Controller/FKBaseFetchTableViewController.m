@@ -34,6 +34,10 @@ $synthesize(updateAnimated);
     return nil;
 }
 
+- (NSString *)cacheName {
+    return NSStringFromClass([self class]);
+}
+
 ////////////////////////////////////////////////////////////////////////
 #pragma mark -
 #pragma mark UIViewController
