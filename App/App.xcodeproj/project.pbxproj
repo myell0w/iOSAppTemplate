@@ -83,6 +83,7 @@
 		6A869948143B58DC0095FA00 /* UIImage+HockeyAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A86993C143B58DB0095FA00 /* UIImage+HockeyAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6A869949143B58DC0095FA00 /* Hockey.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6A86993D143B58DB0095FA00 /* Hockey.bundle */; };
 		6A86994A143B58DC0095FA00 /* README.mkdown in Resources */ = {isa = PBXBuildFile; fileRef = 6A86993E143B58DB0095FA00 /* README.mkdown */; };
+		9B9F2367147A5EF5005DB2E3 /* FKPersistenceAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B9F2366147A5EF5005DB2E3 /* FKPersistenceAction.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -259,6 +260,8 @@
 		6A86993C143B58DB0095FA00 /* UIImage+HockeyAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+HockeyAdditions.m"; sourceTree = "<group>"; };
 		6A86993D143B58DB0095FA00 /* Hockey.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Hockey.bundle; path = ../HockeyKit/client/iOS/Hockey.bundle; sourceTree = "<group>"; };
 		6A86993E143B58DB0095FA00 /* README.mkdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.mkdown; path = ../HockeyKit/client/iOS/README.mkdown; sourceTree = "<group>"; };
+		9B9F2365147A5EF5005DB2E3 /* FKPersistenceAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKPersistenceAction.h; sourceTree = "<group>"; };
+		9B9F2366147A5EF5005DB2E3 /* FKPersistenceAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKPersistenceAction.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -407,6 +410,7 @@
 		397F8168142607BB006B98BD /* MagicalRecord */ = {
 			isa = PBXGroup;
 			children = (
+				9B9F2364147A5EF5005DB2E3 /* FoundationKit */,
 				397F8169142607BB006B98BD /* Categories */,
 				397F8181142607BB006B98BD /* CoreData+MagicalRecord.h */,
 				397F8182142607BB006B98BD /* MagicalRecordHelpers.h */,
@@ -616,6 +620,16 @@
 			name = HockeyKit;
 			sourceTree = "<group>";
 		};
+		9B9F2364147A5EF5005DB2E3 /* FoundationKit */ = {
+			isa = PBXGroup;
+			children = (
+				9B9F2365147A5EF5005DB2E3 /* FKPersistenceAction.h */,
+				9B9F2366147A5EF5005DB2E3 /* FKPersistenceAction.m */,
+			);
+			name = FoundationKit;
+			path = ../../../MagicalRecord/Source/FoundationKit;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -793,6 +807,7 @@
 				6A869948143B58DC0095FA00 /* UIImage+HockeyAdditions.m in Sources */,
 				39DEEB87143CF1B700B81BB5 /* NSManagedObject+FKAdditions.m in Sources */,
 				39DEEB88143CF1B700B81BB5 /* UIViewController+FKAnimatedFetchedResultsController.m in Sources */,
+				9B9F2367147A5EF5005DB2E3 /* FKPersistenceAction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

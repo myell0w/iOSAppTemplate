@@ -137,8 +137,7 @@ $synthesize(clearsSelectionOnViewWillAppear);
     UITableView *tableView = nil;
     
     if (self.useShadows) {
-        // TODO: Use shadowed tableView
-        tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:self.tableViewStyle];
+        tableView = [[FKShadowedTableView alloc] initWithFrame:self.view.bounds style:self.tableViewStyle];
     } else {
         tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:self.tableViewStyle];
     }
