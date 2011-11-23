@@ -1,11 +1,11 @@
 // Part of iOSAppTemplate http://foundationk.it
 
-#import "FKBaseTableViewController.h"
+#import "FKBaseCollapsableTableViewController.h"
 
 /**
  This class serves as the superclass for all tableViewController managed by a fetchedResultsController
  */
-@interface FKBaseFetchTableViewController : FKBaseTableViewController <NSFetchedResultsControllerDelegate> {
+@interface FKBaseFetchTableViewController : FKBaseCollapsableTableViewController <NSFetchedResultsControllerDelegate> {
     NSFetchedResultsController *fetchedResultsController_;
 }
 

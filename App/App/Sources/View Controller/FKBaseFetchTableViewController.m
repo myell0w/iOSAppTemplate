@@ -68,7 +68,7 @@ $synthesize(updateAnimated);
     return self.fetchedResultsController.sections.count;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSectionWhenExpanded:(NSInteger)section {
     NSInteger numberOfRows = 0;
     
     if (self.fetchedResultsController.sections.count > 0) {
