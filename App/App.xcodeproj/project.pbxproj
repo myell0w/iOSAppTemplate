@@ -40,11 +40,7 @@
 		397F819914260948006B98BD /* PDKeychainBindingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 397F819714260948006B98BD /* PDKeychainBindingsController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		397F819B14260978006B98BD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 397F819A14260978006B98BD /* Security.framework */; };
 		397F819E14260B00006B98BD /* FKBaseFetchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 397F819D14260B00006B98BD /* FKBaseFetchTableViewController.m */; };
-		39AA0FEB142A015300C6956C /* Reachability+FKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 39AA0FE8142A015300C6956C /* Reachability+FKAdditions.m */; };
-		39AA0FEC142A015300C6956C /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 39AA0FEA142A015300C6956C /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		39AA0FF9142A0B1600C6956C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39AA0FF8142A0B1600C6956C /* SystemConfiguration.framework */; };
-		39DEEB87143CF1B700B81BB5 /* NSManagedObject+FKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DEEB84143CF1B700B81BB5 /* NSManagedObject+FKAdditions.m */; };
-		39DEEB88143CF1B700B81BB5 /* UIViewController+FKAnimatedFetchedResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DEEB86143CF1B700B81BB5 /* UIViewController+FKAnimatedFetchedResultsController.m */; };
 		39DF5D191424AC5200090805 /* libiOSKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39DF5D131424AC3800090805 /* libiOSKit.a */; };
 		39DF5D391424AD9800090805 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39DF5D381424AD9800090805 /* CoreGraphics.framework */; };
 		39DF5D3B1424ADA100090805 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39DF5D3A1424ADA100090805 /* QuartzCore.framework */; };
@@ -88,6 +84,11 @@
 		9BF0228E147D32E900D95779 /* MagicalRecordHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF0227E147D32E900D95779 /* MagicalRecordHelpers.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9BF0228F147D32E900D95779 /* MRCoreDataAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF02281147D32E900D95779 /* MRCoreDataAction.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9BF022AF147D33A700D95779 /* FKBaseCollapsableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF022AE147D33A700D95779 /* FKBaseCollapsableTableViewController.m */; };
+		9BF022DC147D377100D95779 /* Reachability+FKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF022D9147D377100D95779 /* Reachability+FKAdditions.m */; };
+		9BF022DD147D377100D95779 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF022DB147D377100D95779 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9BF022E6147D378500D95779 /* NSFetchedResultsController+FKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF022E1147D378500D95779 /* NSFetchedResultsController+FKAdditions.m */; };
+		9BF022E7147D378500D95779 /* NSManagedObject+FKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF022E3147D378500D95779 /* NSManagedObject+FKAdditions.m */; };
+		9BF022E8147D378500D95779 /* UIViewController+FKAnimatedFetchedResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF022E5147D378500D95779 /* UIViewController+FKAnimatedFetchedResultsController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -185,15 +186,7 @@
 		397F819A14260978006B98BD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		397F819C14260B00006B98BD /* FKBaseFetchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKBaseFetchTableViewController.h; sourceTree = "<group>"; };
 		397F819D14260B00006B98BD /* FKBaseFetchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKBaseFetchTableViewController.m; sourceTree = "<group>"; };
-		39AA0FE7142A015300C6956C /* Reachability+FKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Reachability+FKAdditions.h"; sourceTree = "<group>"; };
-		39AA0FE8142A015300C6956C /* Reachability+FKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Reachability+FKAdditions.m"; sourceTree = "<group>"; };
-		39AA0FE9142A015300C6956C /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
-		39AA0FEA142A015300C6956C /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		39AA0FF8142A0B1600C6956C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		39DEEB83143CF1B700B81BB5 /* NSManagedObject+FKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+FKAdditions.h"; sourceTree = "<group>"; };
-		39DEEB84143CF1B700B81BB5 /* NSManagedObject+FKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+FKAdditions.m"; sourceTree = "<group>"; };
-		39DEEB85143CF1B700B81BB5 /* UIViewController+FKAnimatedFetchedResultsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+FKAnimatedFetchedResultsController.h"; sourceTree = "<group>"; };
-		39DEEB86143CF1B700B81BB5 /* UIViewController+FKAnimatedFetchedResultsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+FKAnimatedFetchedResultsController.m"; sourceTree = "<group>"; };
 		39DF5D071424AC3700090805 /* iOSKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = iOSKit.xcodeproj; path = ../iOSKit/iOSKit.xcodeproj; sourceTree = "<group>"; };
 		39DF5D381424AD9800090805 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		39DF5D3A1424ADA100090805 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -278,6 +271,17 @@
 		9BF02281147D32E900D95779 /* MRCoreDataAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRCoreDataAction.m; sourceTree = "<group>"; };
 		9BF022AD147D33A700D95779 /* FKBaseCollapsableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKBaseCollapsableTableViewController.h; sourceTree = "<group>"; };
 		9BF022AE147D33A700D95779 /* FKBaseCollapsableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKBaseCollapsableTableViewController.m; sourceTree = "<group>"; };
+		9BF022D8147D377100D95779 /* Reachability+FKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Reachability+FKAdditions.h"; sourceTree = "<group>"; };
+		9BF022D9147D377100D95779 /* Reachability+FKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Reachability+FKAdditions.m"; sourceTree = "<group>"; };
+		9BF022DA147D377100D95779 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		9BF022DB147D377100D95779 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		9BF022DF147D378500D95779 /* FoundationKit+CoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FoundationKit+CoreData.h"; sourceTree = "<group>"; };
+		9BF022E0147D378500D95779 /* NSFetchedResultsController+FKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFetchedResultsController+FKAdditions.h"; sourceTree = "<group>"; };
+		9BF022E1147D378500D95779 /* NSFetchedResultsController+FKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFetchedResultsController+FKAdditions.m"; sourceTree = "<group>"; };
+		9BF022E2147D378500D95779 /* NSManagedObject+FKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+FKAdditions.h"; sourceTree = "<group>"; };
+		9BF022E3147D378500D95779 /* NSManagedObject+FKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+FKAdditions.m"; sourceTree = "<group>"; };
+		9BF022E4147D378500D95779 /* UIViewController+FKAnimatedFetchedResultsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+FKAnimatedFetchedResultsController.h"; sourceTree = "<group>"; };
+		9BF022E5147D378500D95779 /* UIViewController+FKAnimatedFetchedResultsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+FKAnimatedFetchedResultsController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -376,11 +380,11 @@
 				39DF5D071424AC3700090805 /* iOSKit.xcodeproj */,
 				9BF0223E147D32D300D95779 /* AFNetworking */,
 				397F80FC1425EB84006B98BD /* DCIntrospect */,
-				39DEEB82143CF1B700B81BB5 /* FoundationKit CoreData */,
+				9BF022DE147D378500D95779 /* FoundationKit+CoreData */,
 				6A86994C143B58E20095FA00 /* HockeyKit */,
 				9BF0225F147D32E900D95779 /* MagicalRecord */,
 				397F819314260947006B98BD /* PDKeychainBindingsController */,
-				39AA0FE6142A015300C6956C /* Reachability */,
+				9BF022D7147D377100D95779 /* Reachability */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -442,30 +446,6 @@
 			children = (
 			);
 			name = Cells;
-			sourceTree = "<group>";
-		};
-		39AA0FE6142A015300C6956C /* Reachability */ = {
-			isa = PBXGroup;
-			children = (
-				39AA0FE7142A015300C6956C /* Reachability+FKAdditions.h */,
-				39AA0FE8142A015300C6956C /* Reachability+FKAdditions.m */,
-				39AA0FE9142A015300C6956C /* Reachability.h */,
-				39AA0FEA142A015300C6956C /* Reachability.m */,
-			);
-			name = Reachability;
-			path = ../../iOSKit/Sources/Optional/Reachability;
-			sourceTree = "<group>";
-		};
-		39DEEB82143CF1B700B81BB5 /* FoundationKit CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				39DEEB83143CF1B700B81BB5 /* NSManagedObject+FKAdditions.h */,
-				39DEEB84143CF1B700B81BB5 /* NSManagedObject+FKAdditions.m */,
-				39DEEB85143CF1B700B81BB5 /* UIViewController+FKAnimatedFetchedResultsController.h */,
-				39DEEB86143CF1B700B81BB5 /* UIViewController+FKAnimatedFetchedResultsController.m */,
-			);
-			name = "FoundationKit CoreData";
-			path = "../iOSKit/FoundationKit/Sources/Optional/Core Data";
 			sourceTree = "<group>";
 		};
 		39DF5D081424AC3700090805 /* Products */ = {
@@ -657,6 +637,33 @@
 			path = FoundationKit;
 			sourceTree = "<group>";
 		};
+		9BF022D7147D377100D95779 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				9BF022D8147D377100D95779 /* Reachability+FKAdditions.h */,
+				9BF022D9147D377100D95779 /* Reachability+FKAdditions.m */,
+				9BF022DA147D377100D95779 /* Reachability.h */,
+				9BF022DB147D377100D95779 /* Reachability.m */,
+			);
+			name = Reachability;
+			path = ../iOSKit/Sources/Optional/Reachability;
+			sourceTree = "<group>";
+		};
+		9BF022DE147D378500D95779 /* FoundationKit+CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				9BF022DF147D378500D95779 /* FoundationKit+CoreData.h */,
+				9BF022E0147D378500D95779 /* NSFetchedResultsController+FKAdditions.h */,
+				9BF022E1147D378500D95779 /* NSFetchedResultsController+FKAdditions.m */,
+				9BF022E2147D378500D95779 /* NSManagedObject+FKAdditions.h */,
+				9BF022E3147D378500D95779 /* NSManagedObject+FKAdditions.m */,
+				9BF022E4147D378500D95779 /* UIViewController+FKAnimatedFetchedResultsController.h */,
+				9BF022E5147D378500D95779 /* UIViewController+FKAnimatedFetchedResultsController.m */,
+			);
+			name = "FoundationKit+CoreData";
+			path = "../iOSKit/FoundationKit/Sources/Optional/Core Data";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -800,8 +807,6 @@
 				397F819814260948006B98BD /* PDKeychainBindings.m in Sources */,
 				397F819914260948006B98BD /* PDKeychainBindingsController.m in Sources */,
 				397F819E14260B00006B98BD /* FKBaseFetchTableViewController.m in Sources */,
-				39AA0FEB142A015300C6956C /* Reachability+FKAdditions.m in Sources */,
-				39AA0FEC142A015300C6956C /* Reachability.m in Sources */,
 				6A86993F143B58DC0095FA00 /* BWApp.m in Sources */,
 				6A869940143B58DC0095FA00 /* BWGlobal.m in Sources */,
 				6A869941143B58DC0095FA00 /* BWHockeyManager.m in Sources */,
@@ -812,8 +817,6 @@
 				6A869946143B58DC0095FA00 /* PSStoreButton.m in Sources */,
 				6A869947143B58DC0095FA00 /* PSWebTableViewCell.m in Sources */,
 				6A869948143B58DC0095FA00 /* UIImage+HockeyAdditions.m in Sources */,
-				39DEEB87143CF1B700B81BB5 /* NSManagedObject+FKAdditions.m in Sources */,
-				39DEEB88143CF1B700B81BB5 /* UIViewController+FKAnimatedFetchedResultsController.m in Sources */,
 				9BF02255147D32D300D95779 /* AFHTTPClient.m in Sources */,
 				9BF02256147D32D300D95779 /* AFHTTPRequestOperation.m in Sources */,
 				9BF02257147D32D300D95779 /* AFImageCache.m in Sources */,
@@ -839,6 +842,11 @@
 				9BF0228E147D32E900D95779 /* MagicalRecordHelpers.m in Sources */,
 				9BF0228F147D32E900D95779 /* MRCoreDataAction.m in Sources */,
 				9BF022AF147D33A700D95779 /* FKBaseCollapsableTableViewController.m in Sources */,
+				9BF022DC147D377100D95779 /* Reachability+FKAdditions.m in Sources */,
+				9BF022DD147D377100D95779 /* Reachability.m in Sources */,
+				9BF022E6147D378500D95779 /* NSFetchedResultsController+FKAdditions.m in Sources */,
+				9BF022E7147D378500D95779 /* NSManagedObject+FKAdditions.m in Sources */,
+				9BF022E8147D378500D95779 /* UIViewController+FKAnimatedFetchedResultsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
