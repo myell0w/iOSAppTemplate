@@ -881,7 +881,7 @@
 			};
 			name = Debug;
 		};
-		39581C82142299BE00146B4F /* Release */ = {
+		39581C82142299BE00146B4F /* AppStore */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -891,7 +891,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = RELEASE;
+				GCC_PREPROCESSOR_DEFINITIONS = APPSTORE;
 				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "CONFIGURATION_$(CONFIGURATION)";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
@@ -916,7 +916,7 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
-			name = Release;
+			name = AppStore;
 		};
 		39581C84142299BE00146B4F /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -929,7 +929,7 @@
 			};
 			name = Debug;
 		};
-		39581C85142299BE00146B4F /* Release */ = {
+		39581C85142299BE00146B4F /* AppStore */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -938,7 +938,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
-			name = Release;
+			name = AppStore;
 		};
 		39DEEBA7143DBAC800B81BB5 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -947,12 +947,67 @@
 			};
 			name = Debug;
 		};
-		39DEEBA8143DBAC800B81BB5 /* Release */ = {
+		39DEEBA8143DBAC800B81BB5 /* AppStore */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
-			name = Release;
+			name = AppStore;
+		};
+		9BF0223B147D31A700D95779 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DISTRIBUTION;
+				GCC_PREPROCESSOR_DEFINITIONS_NOT_USED_IN_PRECOMPS = "CONFIGURATION_$(CONFIGURATION)";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_MULTIPLE_DEFINITION_TYPES_FOR_SELECTOR = NO;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = NO;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"../HockeyKit/**",
+					"../BlocksKit/**",
+					"../iOSKit/**",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				OTHER_LDFLAGS = (
+					"-fobjc-arc",
+					"-ObjC",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = NO;
+			};
+			name = Distribution;
+		};
+		9BF0223C147D31A700D95779 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = App/Prefix.pch;
+				INFOPLIST_FILE = App/Info.plist;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Distribution;
+		};
+		9BF0223D147D31A700D95779 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Distribution;
 		};
 /* End XCBuildConfiguration section */
 
@@ -961,28 +1016,31 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				39581C81142299BE00146B4F /* Debug */,
-				39581C82142299BE00146B4F /* Release */,
+				39581C82142299BE00146B4F /* AppStore */,
+				9BF0223B147D31A700D95779 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = AppStore;
 		};
 		39581C83142299BE00146B4F /* Build configuration list for PBXNativeTarget "App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				39581C84142299BE00146B4F /* Debug */,
-				39581C85142299BE00146B4F /* Release */,
+				39581C85142299BE00146B4F /* AppStore */,
+				9BF0223C147D31A700D95779 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = AppStore;
 		};
 		39DEEBA6143DBAC800B81BB5 /* Build configuration list for PBXAggregateTarget "BetaDistribute" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				39DEEBA7143DBAC800B81BB5 /* Debug */,
-				39DEEBA8143DBAC800B81BB5 /* Release */,
+				39DEEBA8143DBAC800B81BB5 /* AppStore */,
+				9BF0223D147D31A700D95779 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = AppStore;
 		};
 /* End XCConfigurationList section */
 	};

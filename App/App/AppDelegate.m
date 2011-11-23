@@ -100,7 +100,7 @@ $synthesize(rootViewController);
     [[NSUserDefaults standardUserDefaults] registerDefaultsFromSettingsBundle];
     
     // Setup CoreData
-    [MagicalRecordHelpers setupCoreDataStackWithAutoMigratingSqliteStoreNamed:FKApplicationName()];
+    [MagicalRecordHelpers setupCoreDataStackWithAutoMigratingSqliteStoreNamed:[FKApplicationName() stringByAppendingString:@".sqlite"]];
     
     // Setup Reachability
     [[FKReachability sharedReachability] startCheckingHostAddress:kFKReachabilityHostAddress];
