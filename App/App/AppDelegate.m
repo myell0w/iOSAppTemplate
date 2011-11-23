@@ -2,7 +2,6 @@
 #import "DCIntrospect.h"
 #import "FKBaseViewController.h"
 #import "FKDefines.h"
-#import "AFJSONRequestOperation.h"
 
 #ifdef kFKUseHockeyKit
 #import "BWHockeyManager.h"
