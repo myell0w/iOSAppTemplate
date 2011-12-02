@@ -5,6 +5,10 @@
 
 $synthesize(fetchedResultsController);
 $synthesize(updateAnimated);
+$synthesize(entityClass);
+$synthesize(predicate);
+$synthesize(sectionKeyPath);
+$synthesize(sortDescriptors);
 
 ////////////////////////////////////////////////////////////////////////
 #pragma mark -
@@ -25,31 +29,13 @@ $synthesize(updateAnimated);
 
 ////////////////////////////////////////////////////////////////////////
 #pragma mark -
-#pragma mark FKBaseFetchTableViewController
-////////////////////////////////////////////////////////////////////////
-
-// Subclasses must override
-- (NSFetchedResultsController *)fetchedResultsController {
-    FKLogNotImplemented();
-    return nil;
-}
-
-- (NSString *)cacheName {
-    return NSStringFromClass([self class]);
-}
-
-////////////////////////////////////////////////////////////////////////
-#pragma mark -
 #pragma mark UIViewController
 ////////////////////////////////////////////////////////////////////////
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSError *error = nil;
-    FKAssert([self.fetchedResultsController performFetch:&error],
-             @"Unable to perform fetch on NSFetchedResultsController: %@", 
-             [error localizedDescription]);
+    [self refetch];
 }
 
 - (void)viewDidUnload {
@@ -57,6 +43,52 @@ $synthesize(updateAnimated);
     
     self.fetchedResultsController.delegate = nil;
     fetchedResultsController_ = nil;
+}
+
+////////////////////////////////////////////////////////////////////////
+#pragma mark -
+#pragma mark FKBaseFetchTableViewController
+////////////////////////////////////////////////////////////////////////
+
+- (NSFetchedResultsController *)fetchedResultsController {
+    if (fetchedResultsController_ == nil) {
+        NSFetchRequest *fetchRequest = [self.entityClass requestAllWithPredicate:self.predicate 
+                                                                       inContext:[NSManagedObjectContext defaultContext]];
+        
+        fetchRequest.sortDescriptors = self.sortDescriptors;
+        fetchedResultsController_ = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
+                                                                        managedObjectContext:[NSManagedObjectContext defaultContext]
+                                                                          sectionNameKeyPath:self.sectionKeyPath
+                                                                                   cacheName:self.cacheName];
+    }
+    
+    return fetchedResultsController_;
+}
+
+- (NSString *)cacheName {
+    return NSStringFromClass([self class]);
+}
+
+
+- (void)refetch {
+    NSError *error = nil;
+    
+    // delete cache and re-create fetchedResultsController
+    [NSFetchedResultsController deleteCacheWithName:self.cacheName];
+    fetchedResultsController_ = nil;
+
+    FKAssert([self.fetchedResultsController performFetch:&error],
+             @"Unable to perform fetch on NSFetchedResultsController: %@", 
+             [error localizedDescription]);
+}
+
+- (void)refetchWithPredicate:(NSPredicate *)predicate {
+    self.predicate = predicate;
+    [self refetch];
+}
+
+- (void)setSortDescriptor:(NSSortDescriptor *)sortDescriptor {
+    self.sortDescriptors = $array(sortDescriptor);
 }
 
 ////////////////////////////////////////////////////////////////////////
