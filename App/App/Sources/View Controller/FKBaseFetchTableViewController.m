@@ -1,5 +1,12 @@
 #import "FKBaseFetchTableViewController.h"
 #import "UIViewController+FKAnimatedFetchedResultsController.h"
+#import "NSFetchedResultsController+FKAdditions.h"
+
+@interface FKBaseFetchTableViewController ()
+
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+
+@end
 
 @implementation FKBaseFetchTableViewController
 
@@ -42,7 +49,7 @@ $synthesize(sortDescriptors);
     [super viewDidUnload];
     
     self.fetchedResultsController.delegate = nil;
-    fetchedResultsController_ = nil;
+    self.fetchedResultsController = nil;
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -68,7 +75,6 @@ $synthesize(sortDescriptors);
 - (NSString *)cacheName {
     return NSStringFromClass([self class]);
 }
-
 
 - (void)refetch {
     NSError *error = nil;
@@ -100,15 +106,8 @@ $synthesize(sortDescriptors);
     return self.fetchedResultsController.sections.count;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSectionWhenExpanded:(NSInteger)section {
-    NSInteger numberOfRows = 0;
-    
-    if (self.fetchedResultsController.sections.count > 0) {
-        id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController.sections objectAtIndex:section];
-        numberOfRows = sectionInfo.numberOfObjects;
-    }
-    
-    return numberOfRows;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.fetchedResultsController numberOfRowsInSection:section];
 }
 
 ////////////////////////////////////////////////////////////////////////

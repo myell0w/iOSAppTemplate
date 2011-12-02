@@ -14,6 +14,13 @@ $synthesize(minNumberOfRowsToCollapse);
     if ((self = [super initWithStyle:style])) {
         expandedSections_ = [[NSMutableIndexSet alloc] init];
         minNumberOfRowsToCollapse_ = 10;
+        
+        NSError *error = nil;
+        FKAssert([NSObject swizzleMethod:@selector(tableView:numberOfRowsInSection:) 
+                              withMethod:@selector(tableView:numberOfRowsInSectionWhenExpanded:)
+                                   error:&error],
+                 @"Unable to swizzle tableView:numberOfRowsInSection: with tableView:numberOfRowsInSectionWhenExpanded: - %@", 
+                 [error localizedDescription]);
     }
     
     return self;
