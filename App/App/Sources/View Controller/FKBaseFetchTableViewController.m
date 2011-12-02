@@ -58,6 +58,8 @@ $synthesize(sortDescriptors);
 ////////////////////////////////////////////////////////////////////////
 
 - (NSFetchedResultsController *)fetchedResultsController {
+    FKAssert(self.entityClass != nil, @"entityClass musn't be nil");
+    
     if (fetchedResultsController_ == nil) {
         NSFetchRequest *fetchRequest = [self.entityClass requestAllWithPredicate:self.predicate 
                                                                        inContext:[NSManagedObjectContext defaultContext]];

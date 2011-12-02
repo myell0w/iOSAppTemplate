@@ -7,6 +7,8 @@
  */
 @interface FKBaseFetchTableViewController : FKBaseCollapsableTableViewController <NSFetchedResultsControllerDelegate> 
 
+@property (nonatomic, strong, readonly) NSFetchedResultsController *fetchedResultsController;
+
 /** Indicates whether updates should happen animated or not */
 @property (nonatomic, assign) BOOL updateAnimated;
 /** The cache name of the viewController */
