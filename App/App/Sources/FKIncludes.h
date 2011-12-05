@@ -11,6 +11,6 @@
 #import "BlocksKit.h"
 
 // App-intern
-#import "FKDefines.h"
+#import "FKConstants.h"
 #import "FKLogging.h"
 #import "NSUserDefaults+FKAppAdditions.h"

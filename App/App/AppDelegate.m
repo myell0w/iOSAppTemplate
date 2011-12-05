@@ -1,7 +1,7 @@
 #import "AppDelegate.h"
 #import "DCIntrospect.h"
 #import "FKBaseViewController.h"
-#import "FKDefines.h"
+#import "FKIncludes.h"
 
 #ifdef kFKUseHockeyKit
 #import "BWHockeyManager.h"
@@ -41,8 +41,8 @@ $synthesize(rootViewController);
     
     [self synchronizedUserDefaultsAndUpdateUI];
     
-    if (kFKPostFinishLaunchDelay > 0.) {
-        [self performSelector:@selector(postFinishLaunch) withObject:nil afterDelay:kFKPostFinishLaunchDelay];
+    if (FKConstant.Time.PostFinishLaunchDelay > 0.) {
+        [self performSelector:@selector(postFinishLaunch) withObject:nil afterDelay:FKConstant.Time.PostFinishLaunchDelay];
     }
     
     return YES;
@@ -88,7 +88,7 @@ $synthesize(rootViewController);
     FKLogInfo(@"detected application termination.");
     
     // post notification to all listeners
-    [[NSNotificationCenter defaultCenter] postNotificationName:kFKApplicationWillSuspendNotification object:application];
+    [[NSNotificationCenter defaultCenter] postNotificationName:FKConstant.Notification.ApplicationWillSuspend object:application];
     // save CoreData-Context for mainThread
     [[NSManagedObjectContext defaultContext] save];
 }
@@ -101,7 +101,7 @@ $synthesize(rootViewController);
     [MagicalRecordHelpers setupCoreDataStackWithAutoMigratingSqliteStoreNamed:[FKApplicationName() stringByAppendingString:@".sqlite"]];
     
     // Setup Reachability
-    [[FKReachability sharedReachability] startCheckingHostAddress:kFKReachabilityHostAddress];
+    [[FKReachability sharedReachability] startCheckingHostAddress:FKConstant.URL.Reachability];
 }
 
 - (void)postFinishLaunch {
@@ -111,7 +111,7 @@ $synthesize(rootViewController);
 #endif
     
 #ifdef kFKUseHockeyKit
-    [BWHockeyManager sharedHockeyManager].updateURL = kFKHockeyKitUpdateURL;
+    [BWHockeyManager sharedHockeyManager].updateURL = FKConstant.URL.Hockey;
 #endif
     
     // Listen for Reachability Notifications
