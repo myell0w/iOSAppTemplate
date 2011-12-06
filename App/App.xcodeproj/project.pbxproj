@@ -26,7 +26,6 @@
 		394EF1991422A2670005C045 /* FKBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 394EF1981422A2670005C045 /* FKBaseTableViewController.m */; };
 		39581C72142299BE00146B4F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39581C71142299BE00146B4F /* UIKit.framework */; };
 		39581C74142299BE00146B4F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39581C73142299BE00146B4F /* Foundation.framework */; };
-		39581C7A142299BE00146B4F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 39581C78142299BE00146B4F /* InfoPlist.strings */; };
 		39581C7C142299BE00146B4F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 39581C7B142299BE00146B4F /* main.m */; };
 		39581C80142299BE00146B4F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 39581C7F142299BE00146B4F /* AppDelegate.m */; };
 		397F80E51425EA4B006B98BD /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 397F80E41425EA4B006B98BD /* MessageUI.framework */; };
@@ -59,6 +58,7 @@
 		6A869948143B58DC0095FA00 /* UIImage+HockeyAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A86993C143B58DB0095FA00 /* UIImage+HockeyAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6A869949143B58DC0095FA00 /* Hockey.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6A86993D143B58DB0095FA00 /* Hockey.bundle */; };
 		6A86994A143B58DC0095FA00 /* README.mkdown in Resources */ = {isa = PBXBuildFile; fileRef = 6A86993E143B58DB0095FA00 /* README.mkdown */; };
+		9B5364CC148E502B00A01426 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9B5364CE148E502B00A01426 /* Localizable.strings */; };
 		9B8C1DB8148D2A9C007B5B18 /* FKConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B8C1DB7148D2A9C007B5B18 /* FKConstants.m */; };
 		9BF02255147D32D300D95779 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF02240147D32D300D95779 /* AFHTTPClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9BF02256147D32D300D95779 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BF02242147D32D300D95779 /* AFHTTPRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -162,7 +162,6 @@
 		39581C71142299BE00146B4F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		39581C73142299BE00146B4F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		39581C77142299BE00146B4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		39581C79142299BE00146B4F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		39581C7B142299BE00146B4F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		39581C7D142299BE00146B4F /* Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		39581C7E142299BE00146B4F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -216,6 +215,8 @@
 		6A86993C143B58DB0095FA00 /* UIImage+HockeyAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+HockeyAdditions.m"; sourceTree = "<group>"; };
 		6A86993D143B58DB0095FA00 /* Hockey.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Hockey.bundle; path = ../HockeyKit/client/iOS/Hockey.bundle; sourceTree = "<group>"; };
 		6A86993E143B58DB0095FA00 /* README.mkdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.mkdown; path = ../HockeyKit/client/iOS/README.mkdown; sourceTree = "<group>"; };
+		9B5364CD148E502B00A01426 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9B5364CF148E503A00A01426 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9B8C1DB6148D2A9C007B5B18 /* FKConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKConstants.h; path = App/Sources/Constants/FKConstants.h; sourceTree = "<group>"; };
 		9B8C1DB7148D2A9C007B5B18 /* FKConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKConstants.m; path = App/Sources/Constants/FKConstants.m; sourceTree = "<group>"; };
 		9BF0223F147D32D300D95779 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
@@ -353,6 +354,7 @@
 				397F81BB14260C09006B98BD /* Cells */,
 				394EF14114229BB00005C045 /* View Controller */,
 				39581C75142299BE00146B4F /* App */,
+				9B5364C6148E4F9900A01426 /* Resources */,
 				39581C70142299BE00146B4F /* Frameworks */,
 				39581C6E142299BE00146B4F /* Products */,
 			);
@@ -407,7 +409,6 @@
 			isa = PBXGroup;
 			children = (
 				39581C77142299BE00146B4F /* Info.plist */,
-				39581C78142299BE00146B4F /* InfoPlist.strings */,
 				39581C7B142299BE00146B4F /* main.m */,
 				39581C7D142299BE00146B4F /* Prefix.pch */,
 			);
@@ -544,6 +545,38 @@
 				6A86993E143B58DB0095FA00 /* README.mkdown */,
 			);
 			name = HockeyKit;
+			sourceTree = "<group>";
+		};
+		9B5364C6148E4F9900A01426 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9B5364C7148E4F9E00A01426 /* Icons */,
+				9B5364C9148E4FAD00A01426 /* Images */,
+				9B5364C8148E4FA400A01426 /* Localization */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9B5364C7148E4F9E00A01426 /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Icons;
+			sourceTree = "<group>";
+		};
+		9B5364C8148E4FA400A01426 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				9B5364CE148E502B00A01426 /* Localizable.strings */,
+			);
+			name = Localization;
+			sourceTree = "<group>";
+		};
+		9B5364C9148E4FAD00A01426 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 		9B8C1DB5148D2A4C007B5B18 /* Constants */ = {
@@ -712,6 +745,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				de,
 			);
 			mainGroup = 39581C62142299BE00146B4F;
 			productRefGroup = 39581C6E142299BE00146B4F /* Products */;
@@ -777,9 +811,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39581C7A142299BE00146B4F /* InfoPlist.strings in Resources */,
 				6A869949143B58DC0095FA00 /* Hockey.bundle in Resources */,
 				6A86994A143B58DC0095FA00 /* README.mkdown in Resources */,
+				9B5364CC148E502B00A01426 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -883,12 +917,13 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		39581C78142299BE00146B4F /* InfoPlist.strings */ = {
+		9B5364CE148E502B00A01426 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				39581C79142299BE00146B4F /* en */,
+				9B5364CD148E502B00A01426 /* en */,
+				9B5364CF148E503A00A01426 /* de */,
 			);
-			name = InfoPlist.strings;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
