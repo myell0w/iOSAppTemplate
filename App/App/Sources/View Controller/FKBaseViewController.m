@@ -1,5 +1,11 @@
 #import "FKBaseViewController.h"
 
+@interface FKBaseViewController ()
+
+/** Recursively localizes views loaded from NIB */
+- (void)localizeView:(UIView *)view;
+
+@end
 
 @implementation FKBaseViewController
 
@@ -18,6 +24,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self localizeView:self.view];
     
     [[FKReachability sharedReachability] setupReachabilityFor:self
                                       sendInitialNotification:sendInitialReachabilityNotification];
@@ -65,6 +73,14 @@
 - (void)setupForInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // UIView+FKRotation
     [self.view setSubviewFramesForInterfaceOrientation:interfaceOrientation];
+}
+
+- (void)localizeView:(UIView *)view {
+    [view localizeViewLoadedFromNIB];
+    
+    for (UIView *subview in view.subviews) {
+        [subview localizeViewLoadedFromNIB];
+    }
 }
 
 @end
