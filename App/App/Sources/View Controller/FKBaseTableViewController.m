@@ -18,8 +18,7 @@ $synthesize(useShadows);
 $synthesize(clearsSelectionOnViewWillAppear);
 
 ////////////////////////////////////////////////////////////////////////
-#pragma mark -
-#pragma mark Lifecycle
+#pragma mark - Lifecycle
 ////////////////////////////////////////////////////////////////////////
 
 - (id)initWithStyle:(UITableViewStyle)style {
@@ -36,9 +35,13 @@ $synthesize(clearsSelectionOnViewWillAppear);
     return [self initWithStyle:UITableViewStylePlain];
 }
 
+- (void)dealloc {
+    tableView_.delegate = nil;
+    tableView_.dataSource = nil;
+}
+
 ////////////////////////////////////////////////////////////////////////
-#pragma mark -
-#pragma mark UIViewController
+#pragma mark - UIViewController
 ////////////////////////////////////////////////////////////////////////
 
 - (void)viewDidLoad {
@@ -58,14 +61,13 @@ $synthesize(clearsSelectionOnViewWillAppear);
 - (void)viewDidUnload {
     [super viewDidUnload];
     
+    self.tableView.delegate = nil;
+    self.tableView.dataSource = nil;
     self.tableView = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
     
     if (clearsSelectionOnViewWillAppear_) {
         [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
@@ -88,9 +90,6 @@ $synthesize(clearsSelectionOnViewWillAppear);
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
-    self.tableView.delegate = nil;
-    self.tableView.dataSource = nil;
-    
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
 }
@@ -102,27 +101,7 @@ $synthesize(clearsSelectionOnViewWillAppear);
 }
 
 ////////////////////////////////////////////////////////////////////////
-#pragma mark -
-#pragma mark FKBaseViewController
-////////////////////////////////////////////////////////////////////////
-
-- (void)updateUI {
-    [super updateUI];
-    
-    // If the tableView has no data, show placeholder instead
-    // Subclasses must implement the delegate-method contentUnavailableViewForTableView:
-    
-    // TODO: does this check work, to determine if tableView is empty?
-    if (self.tableView.visibleCells.count == 0) {
-        [self.tableView setContentUnavailableViewHidden:NO];
-    } else {
-        [self.tableView setContentUnavailableViewHidden:YES];
-    }
-}
-
-////////////////////////////////////////////////////////////////////////
-#pragma mark -
-#pragma mark FKBaseTableViewController
+#pragma mark - FKBaseTableViewController
 ////////////////////////////////////////////////////////////////////////
 
 - (void)setTableView:(UITableView *)tableView {
@@ -148,8 +127,7 @@ $synthesize(clearsSelectionOnViewWillAppear);
 }
 
 ////////////////////////////////////////////////////////////////////////
-#pragma mark -
-#pragma mark UITableViewDataSource
+#pragma mark - UITableViewDataSource
 ////////////////////////////////////////////////////////////////////////
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -163,8 +141,7 @@ $synthesize(clearsSelectionOnViewWillAppear);
 }
 
 ////////////////////////////////////////////////////////////////////////
-#pragma mark -
-#pragma mark Private
+#pragma mark - Private
 ////////////////////////////////////////////////////////////////////////
 
 - (void)keyboardWillShow:(NSNotification *)notification {

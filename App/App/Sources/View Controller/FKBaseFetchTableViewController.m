@@ -16,6 +16,7 @@ $synthesize(entityClass);
 $synthesize(predicate);
 $synthesize(sectionKeyPath);
 $synthesize(sortDescriptors);
+$synthesize(contentUnavailableView);
 
 ////////////////////////////////////////////////////////////////////////
 #pragma mark -
@@ -50,6 +51,24 @@ $synthesize(sortDescriptors);
     
     self.fetchedResultsController.delegate = nil;
     self.fetchedResultsController = nil;
+    self.contentUnavailableView = nil;
+}
+
+////////////////////////////////////////////////////////////////////////
+#pragma mark -
+#pragma mark FKBaseViewController
+////////////////////////////////////////////////////////////////////////
+
+- (void)updateUI {
+    [super updateUI];
+    
+    // If the tableView has no data, show placeholder instead
+    // Subclasses must implement the delegate-method contentUnavailableViewForTableView:
+    if (self.fetchedResultsController.fetchedObjects.count == 0) {
+        [self.tableView setContentUnavailableViewHidden:NO];
+    } else {
+        [self.tableView setContentUnavailableViewHidden:YES];
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -69,6 +88,7 @@ $synthesize(sortDescriptors);
                                                                         managedObjectContext:[NSManagedObjectContext defaultContext]
                                                                           sectionNameKeyPath:self.sectionKeyPath
                                                                                    cacheName:self.cacheName];
+        fetchedResultsController_.delegate = self;
     }
     
     return fetchedResultsController_;
@@ -81,6 +101,9 @@ $synthesize(sortDescriptors);
 - (void)refetch {
     NSError *error = nil;
     
+    BOOL updateAnimatedBefore = self.updateAnimated;
+    self.updateAnimated = NO;
+    
     // delete cache and re-create fetchedResultsController
     [NSFetchedResultsController deleteCacheWithName:self.cacheName];
     fetchedResultsController_ = nil;
@@ -88,6 +111,8 @@ $synthesize(sortDescriptors);
     FKAssert([self.fetchedResultsController performFetch:&error],
              @"Unable to perform fetch on NSFetchedResultsController: %@", 
              [error localizedDescription]);
+    
+    self.updateAnimated = updateAnimatedBefore;
 }
 
 - (void)refetchWithPredicate:(NSPredicate *)predicate {

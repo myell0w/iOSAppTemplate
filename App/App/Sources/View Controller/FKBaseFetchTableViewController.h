@@ -22,6 +22,8 @@
 @property (nonatomic, copy) NSString *sectionKeyPath;
 /** The sort descriptors of the fetchedResultsController */
 @property (nonatomic, copy) NSArray *sortDescriptors;
+/** The view that is visible if there is no content */
+@property (nonatomic, strong) UIView *contentUnavailableView;
 
 /**
  Re-creates fetchedResultsController and performs a fetch
