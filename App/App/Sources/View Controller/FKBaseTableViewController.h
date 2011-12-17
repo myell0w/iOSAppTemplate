@@ -7,7 +7,7 @@
  */
 @interface FKBaseTableViewController : FKBaseViewController <UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) IBOutlet UITableView *tableView;
 @property (nonatomic, assign, readonly) UITableViewStyle tableViewStyle;
 @property (nonatomic, assign) BOOL clearsSelectionOnViewWillAppear;
 /** Flag to control if the tableView shows shadows on top and bottom */

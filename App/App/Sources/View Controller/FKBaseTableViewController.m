@@ -47,8 +47,10 @@ $synthesize(clearsSelectionOnViewWillAppear);
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.tableView = [self customizedTableView];
-    [self.view addSubview:self.tableView];
+    if (self.tableView == nil) {
+        self.tableView = [self customizedTableView];
+        [self.view addSubview:self.tableView];
+    }
     
     self.tableView.backgroundColor = [UIColor clearColor];
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
