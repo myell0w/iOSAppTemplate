@@ -5,7 +5,7 @@
 /**
  This class serves as the superclass for all tableViewController managed by a fetchedResultsController
  */
-@interface FKBaseFetchTableViewController : FKBaseCollapsableTableViewController <NSFetchedResultsControllerDelegate> 
+@interface FKBaseFetchTableViewController : FKBaseTableViewController <NSFetchedResultsControllerDelegate> 
 
 @property (nonatomic, strong, readonly) NSFetchedResultsController *fetchedResultsController;
 
