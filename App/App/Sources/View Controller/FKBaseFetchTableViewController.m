@@ -10,34 +10,32 @@
 
 @implementation FKBaseFetchTableViewController
 
-$synthesize(fetchedResultsController);
-$synthesize(updateAnimated);
-$synthesize(entityClass);
-$synthesize(predicate);
-$synthesize(sectionKeyPath);
-$synthesize(sortDescriptors);
-$synthesize(contentUnavailableView);
+@synthesize fetchedResultsController = _fetchedResultsController;
+@synthesize updateAnimated = _updateAnimated;
+@synthesize entityClass = _entityClass;
+@synthesize predicate = _predicate;
+@synthesize sectionKeyPath = _sectionKeyPath;
+@synthesize sortDescriptors = _sortDescriptors;
+@synthesize contentUnavailableView = _contentUnavailableView;
 
 ////////////////////////////////////////////////////////////////////////
-#pragma mark -
-#pragma mark Lifecycle
+#pragma mark - Lifecycle
 ////////////////////////////////////////////////////////////////////////
 
 - (id)initWithStyle:(UITableViewStyle)style {
     if ((self = [super initWithStyle:style])) {
-        updateAnimated_ = YES;
+        _updateAnimated = YES;
     }
     
     return self;
 }
 
 - (void)dealloc {
-    fetchedResultsController_.delegate = nil;
+    _fetchedResultsController.delegate = nil;
 }
 
 ////////////////////////////////////////////////////////////////////////
-#pragma mark -
-#pragma mark UIViewController
+#pragma mark - UIViewController
 ////////////////////////////////////////////////////////////////////////
 
 - (void)viewDidLoad {
@@ -55,8 +53,7 @@ $synthesize(contentUnavailableView);
 }
 
 ////////////////////////////////////////////////////////////////////////
-#pragma mark -
-#pragma mark FKBaseViewController
+#pragma mark - FKBaseViewController
 ////////////////////////////////////////////////////////////////////////
 
 - (void)updateUI {
@@ -72,26 +69,25 @@ $synthesize(contentUnavailableView);
 }
 
 ////////////////////////////////////////////////////////////////////////
-#pragma mark -
-#pragma mark FKBaseFetchTableViewController
+#pragma mark - FKBaseFetchTableViewController
 ////////////////////////////////////////////////////////////////////////
 
 - (NSFetchedResultsController *)fetchedResultsController {
     FKAssert(self.entityClass != nil, @"entityClass musn't be nil");
     
-    if (fetchedResultsController_ == nil) {
+    if (_fetchedResultsController == nil) {
         NSFetchRequest *fetchRequest = [self.entityClass requestAllWithPredicate:self.predicate 
                                                                        inContext:[NSManagedObjectContext defaultContext]];
         
         fetchRequest.sortDescriptors = self.sortDescriptors;
-        fetchedResultsController_ = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
+        _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
                                                                         managedObjectContext:[NSManagedObjectContext defaultContext]
                                                                           sectionNameKeyPath:self.sectionKeyPath
                                                                                    cacheName:self.cacheName];
-        fetchedResultsController_.delegate = self;
+        _fetchedResultsController.delegate = self;
     }
     
-    return fetchedResultsController_;
+    return _fetchedResultsController;
 }
 
 - (NSString *)cacheName {
@@ -106,7 +102,7 @@ $synthesize(contentUnavailableView);
     
     // delete cache and re-create fetchedResultsController
     [NSFetchedResultsController deleteCacheWithName:self.cacheName];
-    fetchedResultsController_ = nil;
+    _fetchedResultsController = nil;
 
     FKAssert([self.fetchedResultsController performFetch:&error],
              @"Unable to perform fetch on NSFetchedResultsController: %@", 
@@ -125,8 +121,7 @@ $synthesize(contentUnavailableView);
 }
 
 ////////////////////////////////////////////////////////////////////////
-#pragma mark -
-#pragma mark UITableViewDataSource
+#pragma mark - UITableViewDataSource
 ////////////////////////////////////////////////////////////////////////
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -138,8 +133,7 @@ $synthesize(contentUnavailableView);
 }
 
 ////////////////////////////////////////////////////////////////////////
-#pragma mark -
-#pragma mark NSFetchedResultsController Animated Update
+#pragma mark - NSFetchedResultsController Animated Update
 ////////////////////////////////////////////////////////////////////////
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller { 

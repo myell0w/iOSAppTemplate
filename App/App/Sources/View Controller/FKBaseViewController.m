@@ -10,17 +10,29 @@
 @implementation FKBaseViewController
 
 ////////////////////////////////////////////////////////////////////////
-#pragma mark -
-#pragma mark UIViewController
+#pragma mark - Lifecycle
 ////////////////////////////////////////////////////////////////////////
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
         sendInitialReachabilityNotification = YES;
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(applicationDidBecomeActive:) 
+                                                     name:UIApplicationDidBecomeActiveNotification 
+                                                   object:nil];
     }
     
     return self;
 }
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidBecomeActiveNotification object:nil];
+}
+
+////////////////////////////////////////////////////////////////////////
+#pragma mark - UIViewController
+////////////////////////////////////////////////////////////////////////
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,7 +40,7 @@
     [self localizeView:self.view];
     
     [[FKReachability sharedReachability] setupReachabilityFor:self
-                                      sendInitialNotification:sendInitialReachabilityNotification];
+                                      sendInitialNotification:self->sendInitialReachabilityNotification];
 }
 
 - (void)viewDidUnload {
@@ -46,11 +58,6 @@
     FKLogVerbose(@"Received simulated memory warning.");
 }
 
-////////////////////////////////////////////////////////////////////////
-#pragma mark -
-#pragma mark Rotation
-////////////////////////////////////////////////////////////////////////
-
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
     return FKRotateToAllSupportedOrientations(toInterfaceOrientation);
 }
@@ -62,8 +69,7 @@
 }
 
 ////////////////////////////////////////////////////////////////////////
-#pragma mark -
-#pragma mark FKBaseViewController
+#pragma mark - FKBaseViewController
 ////////////////////////////////////////////////////////////////////////
 
 - (void)updateUI {
@@ -81,6 +87,10 @@
     for (UIView *subview in view.subviews) {
         [subview localizeViewLoadedFromNIB];
     }
+}
+
+- (void)applicationDidBecomeActive:(NSNotification *)notification {
+    [self updateUI];
 }
 
 @end

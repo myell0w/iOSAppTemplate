@@ -2,8 +2,8 @@
 
 @implementation FKBaseCollapsableTableViewController
 
-$synthesize(expandedSections);
-$synthesize(minNumberOfRowsToCollapse);
+@synthesize expandedSections = _expandedSections;
+@synthesize minNumberOfRowsToCollapse = _minNumberOfRowsToCollapse;
 
 ////////////////////////////////////////////////////////////////////////
 #pragma mark -
@@ -12,8 +12,8 @@ $synthesize(minNumberOfRowsToCollapse);
 
 - (id)initWithStyle:(UITableViewStyle)style {
     if ((self = [super initWithStyle:style])) {
-        expandedSections_ = [[NSMutableIndexSet alloc] init];
-        minNumberOfRowsToCollapse_ = 10;
+        _expandedSections = [[NSMutableIndexSet alloc] init];
+        _minNumberOfRowsToCollapse = 10;
     }
     
     return self;

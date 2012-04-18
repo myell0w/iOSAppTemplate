@@ -12,10 +12,10 @@
 
 @implementation FKBaseTableViewController
 
-$synthesize(tableView);
-$synthesize(tableViewStyle);
-$synthesize(useShadows);
-$synthesize(clearsSelectionOnViewWillAppear);
+@synthesize tableView = _tableView;
+@synthesize tableViewStyle = _tableViewStyle;
+@synthesize useShadows = _useShadows;
+@synthesize clearsSelectionOnViewWillAppear = _clearsSelectionOnViewWillAppear;
 
 ////////////////////////////////////////////////////////////////////////
 #pragma mark - Lifecycle
@@ -23,9 +23,9 @@ $synthesize(clearsSelectionOnViewWillAppear);
 
 - (id)initWithStyle:(UITableViewStyle)style {
     if ((self = [super initWithNibName:nil bundle:nil])) {
-        tableViewStyle_ = style;
-        useShadows_ = NO;
-        clearsSelectionOnViewWillAppear_ = YES;
+        _tableViewStyle = style;
+        _useShadows = NO;
+        _clearsSelectionOnViewWillAppear = YES;
     }
     
     return self;
@@ -36,8 +36,8 @@ $synthesize(clearsSelectionOnViewWillAppear);
 }
 
 - (void)dealloc {
-    tableView_.delegate = nil;
-    tableView_.dataSource = nil;
+    _tableView.delegate = nil;
+    _tableView.dataSource = nil;
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -58,6 +58,8 @@ $synthesize(clearsSelectionOnViewWillAppear);
     if ([self.tableView respondsToSelector:@selector(setBackgroundView:)]) {
 		[self.tableView setBackgroundView:[[UIView alloc] initWithFrame:CGRectZero]];
 	}
+    
+    [self.tableView reloadData];
 }
 
 - (void)viewDidUnload {
@@ -71,7 +73,7 @@ $synthesize(clearsSelectionOnViewWillAppear);
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    if (clearsSelectionOnViewWillAppear_) {
+    if (_clearsSelectionOnViewWillAppear) {
         [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
     }
     
@@ -107,10 +109,10 @@ $synthesize(clearsSelectionOnViewWillAppear);
 ////////////////////////////////////////////////////////////////////////
 
 - (void)setTableView:(UITableView *)tableView {
-    if (tableView_ != tableView) {
-        tableView_ = tableView;
-        tableView_.delegate = self;
-        tableView_.dataSource = self;
+    if (tableView != _tableView) {
+        _tableView = tableView;
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
     }
 }
 

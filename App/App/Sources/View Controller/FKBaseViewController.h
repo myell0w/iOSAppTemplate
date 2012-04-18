@@ -15,4 +15,6 @@
 /** setup the UI for a given interface orientation */
 - (void)setupForInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation;
 
+- (void)applicationDidBecomeActive:(NSNotification *)notification;
+
 @end
