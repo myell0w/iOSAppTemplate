@@ -3,14 +3,24 @@
 #import "UIImageView+AFNetworking.h"
 
 
-#define kFKPaddingX                             5.f
+#define kFKMinHeight                            44.f
+#define kFKPaddingXLeft                         5.f
+#define kFKPaddingXRight                        25.f
 #define kFKPaddingYOutside                      5.f
 #define kFKPaddingYInside                       2.f
 #define kFKPaddingYImage                        kFKPaddingYOutside + kFKPaddingYInside
 #define kFKHeaderLineBreakMode                  UILineBreakModeWordWrap
 #define kFKDetailTextLineBreakMode              UILineBreakModeWordWrap
 #define kFKFooterLineBreakMode                  UILineBreakModeWordWrap
-#define kFKImageViewRect                        CGRectMake(kFKPaddingX, kFKPaddingYImage, 55.f, 55.f)
+#define kFKImageViewRect                        CGRectMake(kFKPaddingXLeft, kFKPaddingYImage, 55.f, 55.f)
+
+#define kFKHeaderColor                          [UIColor blackColor]
+#define kFKDetailTextColor                      [UIColor blackColor]
+#define kFKFooterColor                          [UIColor darkGrayColor]
+
+#define kFKHeaderHighlightedColor               [UIColor blackColor]
+#define kFKDetailTextHighlightedColor           [UIColor darkGrayColor]
+#define kFKFooterHighlightedColor               [UIColor darkGrayColor]
 
 
 static UIFont *headerFont = nil;
@@ -22,16 +32,23 @@ static UIImage *placeholderImage = nil;
 @interface FKGenericTableViewCell ()
 
 @property (nonatomic, strong) UIImageView *cellImageView;
+@property (nonatomic, strong) UILabel *headerLabel;
+@property (nonatomic, strong) UILabel *detailLabel;
+@property (nonatomic, strong) UILabel *footerLabel;
 @property (nonatomic, readonly) BOOL imageVisible;
+
+- (UILabel *)labelWithFont:(UIFont *)font
+                 textColor:(UIColor *)textColor
+      highlightedTextColor:(UIColor *)highlightedTextColor
+             lineBreakMode:(UILineBreakMode)lineBreakMode;
+
+- (void)layoutLabels;
 
 @end
 
 
 @implementation FKGenericTableViewCell
 
-@synthesize headerText = _headerText;
-@synthesize detailText = _detailText;
-@synthesize footerText = _footerText;
 @synthesize cellImageView = _cellImageView;
 
 ////////////////////////////////////////////////////////////////////////
@@ -53,11 +70,28 @@ static UIImage *placeholderImage = nil;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if ((self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])) {
+        _headerLabel = [self labelWithFont:headerFont
+                                 textColor:kFKHeaderColor
+                      highlightedTextColor:kFKHeaderHighlightedColor
+                             lineBreakMode:kFKHeaderLineBreakMode];
+        [self.contentView addSubview:_headerLabel];
+        
+        _detailLabel = [self labelWithFont:detailFont
+                                 textColor:kFKDetailTextColor
+                      highlightedTextColor:kFKDetailTextHighlightedColor
+                             lineBreakMode:kFKDetailTextLineBreakMode];
+        [self.contentView addSubview:_detailLabel];
+        
+        _footerLabel = [self labelWithFont:footerFont
+                                 textColor:kFKFooterColor
+                      highlightedTextColor:kFKFooterHighlightedColor
+                             lineBreakMode:kFKFooterLineBreakMode];
+        [self.contentView addSubview:_footerLabel];
+        
         _cellImageView = [[UIImageView alloc] initWithFrame:kFKImageViewRect];
         _cellImageView.clipsToBounds = YES;
         _cellImageView.contentMode = UIViewContentModeScaleAspectFill;
-        _cellImageView.hidden = YES;        
-        
+        _cellImageView.hidden = YES;
         [self addSubview:_cellImageView];
     }
     
@@ -74,10 +108,10 @@ static UIImage *placeholderImage = nil;
                         imageVisible:(BOOL)imageVisible
                   constrainedToWidth:(CGFloat)width {
     NSInteger numberOfVisibleLabels = 0;
-    CGFloat innerWidth = width - 2*kFKPaddingX;
+    CGFloat innerWidth = width - kFKPaddingXLeft - kFKPaddingXRight;
     
     if (imageVisible) {
-        innerWidth -= CGRectGetWidth(kFKImageViewRect) + kFKPaddingX;
+        innerWidth -= CGRectGetWidth(kFKImageViewRect) + kFKPaddingXLeft;
     }
     
     CGSize constraint = CGSizeMake(innerWidth, CGFLOAT_MAX);
@@ -110,7 +144,9 @@ static UIImage *placeholderImage = nil;
                               + (numberOfVisibleLabels-1)*kFKPaddingYInside
                               + 2*kFKPaddingYOutside);
     
-    return imageVisible ? MAX(computedHeight, CGRectGetHeight(kFKImageViewRect) + 2*kFKPaddingYImage) : computedHeight;
+    CGFloat neededHeight = imageVisible ? MAX(computedHeight, CGRectGetHeight(kFKImageViewRect) + 2*kFKPaddingYImage) : computedHeight;
+    
+    return MAX(kFKMinHeight, neededHeight);
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -126,6 +162,8 @@ static UIImage *placeholderImage = nil;
     } else {
         self.cellImageView.hidden = YES;
     }
+    
+    [self layoutLabels];
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -135,6 +173,8 @@ static UIImage *placeholderImage = nil;
 - (void)prepareForReuse {
     [super prepareForReuse];
     
+    [self hideLoadingIndicator];
+    
     self.cellImageView.hidden = YES;
     self.cellImageView.image = nil;
     _headerText = nil;
@@ -143,76 +183,7 @@ static UIImage *placeholderImage = nil;
 }
 
 ////////////////////////////////////////////////////////////////////////
-#pragma mark - FKTableViewCell
-////////////////////////////////////////////////////////////////////////
-
-- (void)drawContentViewInRect:(CGRect)rect highlighted:(BOOL)highlighted {
-    CGContextRef context = UIGraphicsGetCurrentContext();
-	UIColor *headerTextColor = [UIColor blackColor];
-    UIColor *detailTextColor = [UIColor blackColor];
-    UIColor *footerTextColor = [UIColor darkGrayColor];
-    CGFloat textX = self.imageVisible ? self.cellImageView.frameRight + kFKPaddingX : kFKPaddingX;
-    CGFloat textRightPadding = 25.f;
-    CGFloat innerWidth = self.frameWidth - textX - textRightPadding;
-    CGPoint p = CGPointMake(textX, kFKPaddingYOutside);
-    
-    // change colors when selected
-	if (highlighted) {
-        headerTextColor = [UIColor blackColor];
-        detailTextColor = [UIColor darkGrayColor];
-        footerTextColor = [UIColor darkGrayColor];
-        
-        // draw gradient
-        CGGradientRef gradientRef = FKCreateGradientWithColors($array([UIColor whiteColor],
-                                                                      [UIColor lightGrayColor]));
-        FKDrawGradientInRect(context, gradientRef, rect);
-        CGGradientRelease(gradientRef);
-	} else {
-        // Only draw gradient on fast devices
-        if ([[UIDevice currentDevice] isCrappy]) {
-            [[UIColor whiteColor] set];
-            CGContextFillRect(context, rect);
-        } else {
-            CGGradientRef gradientRef = FKCreateGradientWithColors($array([UIColor whiteColor],
-                                                                          [UIColor whiteColor]));
-            FKDrawGradientInRect(context, gradientRef, rect);
-            CGGradientRelease(gradientRef);
-        }
-    }
-    
-    // Draw Header Text
-    [headerTextColor set];
-    CGSize neededSize = [_headerText drawInRect:CGRectMake(p.x, p.y, innerWidth, CGFLOAT_MAX)
-                                       withFont:headerFont
-                                  lineBreakMode:kFKHeaderLineBreakMode
-                                      alignment:UITextAlignmentLeft];
-    
-    p.y += neededSize.height + kFKPaddingYInside;
-    
-    if (!$empty(_detailText)) {
-        // Draw Detail Text   
-        [detailTextColor set];
-        neededSize = [_detailText drawInRect:CGRectMake(p.x, p.y, innerWidth, CGFLOAT_MAX)
-                                    withFont:detailFont
-                               lineBreakMode:kFKDetailTextLineBreakMode
-                                   alignment:UITextAlignmentLeft];
-        
-        p.y += neededSize.height + kFKPaddingYInside;
-    }
-    
-    // Draw Footer Text?
-    if (!$empty(_footerText)) { 
-        [footerTextColor set];
-        [_footerText drawInRect:CGRectMake(p.x, p.y, innerWidth, CGFLOAT_MAX)
-                       withFont:footerFont
-                  lineBreakMode:kFKFooterLineBreakMode
-                      alignment:UITextAlignmentLeft];
-        
-    }
-}
-
-////////////////////////////////////////////////////////////////////////
-#pragma mark - NDRTableViewCell
+#pragma mark - FKGenericTableViewCell
 ////////////////////////////////////////////////////////////////////////
 
 - (void)setImage:(UIImage *)image {
@@ -229,31 +200,96 @@ static UIImage *placeholderImage = nil;
     [self.cellImageView setImageWithURLRequest:[NSURLRequest requestWithURL:imageURL]
                               placeholderImage:placeholderImage
                                        success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
-                                           [weakSelf.cellImageView setImage:image animated:YES];
+                                           __strong FKGenericTableViewCell *strongSelf = weakSelf;
+                                           
+                                           if (strongSelf != nil) {
+                                               [strongSelf.cellImageView setImage:image animated:YES];
+                                           }
                                        } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
-                                           weakSelf.cellImageView.image = placeholderImage;
+                                           __strong FKGenericTableViewCell *strongSelf = weakSelf;
+                                           
+                                           if (strongSelf != nil) {
+                                               strongSelf.cellImageView.image = placeholderImage;
+                                           }
                                        }];
 }
 
+- (void)setSelectedBackgroundColor:(UIColor *)color {
+    UIView *view = [[UIView alloc] initWithFrame:self.frame];
+    
+    view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    view.backgroundColor = color;
+    
+    self.selectedBackgroundView = view;
+}
+
 - (void)setHeaderText:(NSString *)headerText {
-    if (_headerText != headerText) {
-        _headerText = headerText;
-        [self setNeedsDisplay];
+    if (self.headerLabel.text != headerText) {
+        self.headerLabel.text = headerText;
+        [self setNeedsLayout];
     }
 }
 
 - (void)setDetailText:(NSString *)detailText {
-    if (_detailText != detailText) {
-        _detailText = detailText;
-        [self setNeedsDisplay];
+    if (self.detailLabel.text != detailText) {
+        self.detailLabel.text = detailText;
+        [self setNeedsLayout];
     }
 }
 
 - (void)setFooterText:(NSString *)footerText {
-    if (_footerText != footerText) {
-        _footerText = footerText;
-        [self setNeedsDisplay];
+    if (self.footerLabel.text != footerText) {
+        self.footerLabel.text = footerText;
+        [self setNeedsLayout];
     }
+}
+
+- (void)setHeaderTextColor:(UIColor *)headerTextColor {
+    self.headerLabel.textColor = headerTextColor;
+}
+
+- (UIColor *)headerTextColor {
+    return self.headerLabel.textColor;
+}
+
+- (void)setDetailTextColor:(UIColor *)detailTextColor {
+    self.detailLabel.textColor = detailTextColor;
+}
+
+- (UIColor *)detailTextColor {
+    return self.detailLabel.textColor;
+}
+
+- (void)setFooterTextColor:(UIColor *)footerTextColor {
+    self.footerLabel.textColor = footerTextColor;
+}
+
+- (UIColor *)footerTextColor {
+    return self.footerLabel.textColor;
+}
+
+- (void)setHeaderTextHighlightedColor:(UIColor *)headerTextHighlightedColor {
+    self.headerLabel.highlightedTextColor = headerTextHighlightedColor;
+}
+
+- (UIColor *)headerTextHighlightedColor {
+    return self.headerLabel.highlightedTextColor;
+}
+
+- (void)setDetailTextHighlightedColor:(UIColor *)detailTextHighlightedColor {
+    self.detailLabel.highlightedTextColor = detailTextHighlightedColor;
+}
+
+- (UIColor *)detailTextHighlightedColor {
+    return self.detailLabel.highlightedTextColor;
+}
+
+- (void)setFooterTextHighlightedColor:(UIColor *)footerTextHighlightedColor {
+    self.footerLabel.highlightedTextColor = footerTextHighlightedColor;
+}
+
+- (UIColor *)footerTextHighlightedColor {
+    return self.footerLabel.highlightedTextColor;
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -264,5 +300,63 @@ static UIImage *placeholderImage = nil;
     return self.cellImageView.image != nil && self.cellImageView.hidden == NO;
 }
 
+- (UILabel *)labelWithFont:(UIFont *)font
+                 textColor:(UIColor *)textColor
+      highlightedTextColor:(UIColor *)highlightedTextColor
+             lineBreakMode:(UILineBreakMode)lineBreakMode {
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
+    
+    label.backgroundColor = [UIColor clearColor];
+    label.font = font;
+    label.textColor = textColor;
+    label.highlightedTextColor = highlightedTextColor;
+    label.lineBreakMode = lineBreakMode;
+    label.numberOfLines = 0;
+    
+    return label;
+}
+
+- (void)layoutLabels {
+    CGFloat textX = self.imageVisible ? self.cellImageView.frameRight + kFKPaddingXLeft : kFKPaddingXLeft;
+    CGFloat innerWidth = self.contentView.frameWidth - textX - kFKPaddingXRight;
+    CGPoint p = CGPointMake(textX, kFKPaddingYOutside);
+    CGSize constraint = CGSizeMake(innerWidth, CGFLOAT_MAX);
+    
+    // Compute Sizes
+    CGSize sizeHeaderText = [self.headerLabel.text sizeWithFont:self.headerLabel.font
+                                              constrainedToSize:constraint
+                                                  lineBreakMode:self.headerLabel.lineBreakMode];
+    
+    CGSize sizeDetailText = [self.detailLabel.text sizeWithFont:self.detailLabel.font
+                                              constrainedToSize:constraint
+                                                  lineBreakMode:self.detailLabel.lineBreakMode];
+    
+    CGSize sizeFooterText = [self.footerLabel.text sizeWithFont:self.footerLabel.font
+                                              constrainedToSize:constraint
+                                                  lineBreakMode:self.footerLabel.lineBreakMode];
+    
+    // Special case, only display header text (centered)
+    if (sizeDetailText.height == 0.f && sizeFooterText.height == 0.f) {
+        sizeHeaderText.height = MAX(kFKMinHeight - 2*kFKPaddingYOutside, sizeHeaderText.height);
+    }
+    
+    self.headerLabel.frame = (CGRect){p, sizeHeaderText};
+    p.y += sizeHeaderText.height + kFKPaddingYInside;
+    
+    if (sizeDetailText.height > 0.f) {
+        self.detailLabel.hidden = NO;
+        self.detailLabel.frame = (CGRect){p, sizeDetailText};
+        p.y += sizeDetailText.height + kFKPaddingYInside;
+    } else {
+        self.detailLabel.hidden = YES;
+    }
+    
+    if (sizeFooterText.height > 0.f) {
+        self.footerLabel.hidden = NO;
+        self.footerLabel.frame = (CGRect){p, sizeFooterText};
+    } else {
+        self.footerLabel.hidden = YES;
+    }
+}
 
 @end
